@@ -25,9 +25,9 @@ const FlotanteBoton: React.FC = () => {
                 >
                     <FaWhatsapp className='w-6 h-6' />
                 </button>
-                {/* Tooltip */}
+
                 {showTooltip && (
-                    <div className="absolute bottom-4 right-10 mb-2 w-52 p-2 bg-white text-black text-sm rounded-md shadow-md">
+                    <div className="absolute bottom-4 right-10 mb-2 w-56 p-2 bg-white text-black text-sm rounded-md shadow-md">
                         ¿En qué podemos ayudarte?
                     </div>
                 )}

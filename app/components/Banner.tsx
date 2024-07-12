@@ -4,14 +4,14 @@ const Banner: React.FC = () => {
     return (
         <>
           <div className="relative h-screen">
-            <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url("/fondo1.jpg")' }}>           
+            <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url("/fondo2.webp")' }}>           
             </div>
             <div className="relative flex flex-col justify-center items-center h-full text-white">
                 <div className="textos text-center w-[65%] mx-auto">
-                    <h1 className="text-4xl md:text-5xl text-gray-900 uppercase">
-                        Frontend<span className="text-3xl md:text-3xl"> Developer.</span>
+                    <h1 className="text-4xl md:text-6xl text-gray-900">
+                    Developer<span className="text-3xl md:text-3xl"> Web.</span>
                     </h1>
-                    <p className="text-md md:text-md mt-4 mb-12 md:mt-6 text-gray-800">
+                    <p className="text-lg md:text-md mt-4 mb-12 md:mt-6 text-gray-800">
                         ¡Hola! Soy Marlon Colon, un desarrollador web apasionado y orientado a resultados, que administra sitios web y aplicaciones que conducen al éxito del producto general.
                     </p>
                     <div className="mt-6 flex flex-wrap gap-4 justify-end max-sm:flex-col max-sm:items-stretch">

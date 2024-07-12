@@ -11,6 +11,7 @@ const Header: React.FC = () => {
 
     return (
         <>
+            {/* Escritorio Menu */}
             <div className="fixed top-0 left-0 right-0 z-10 flex justify-around py-4 px-4 bg-white shadow-xl">
                 <div>
                     <a className="text-black text-4xl" href="#"><h3>Code <span className="text-gray-700 text-lg">Mac.</span></h3></a>
@@ -25,9 +26,9 @@ const Header: React.FC = () => {
                     <FontAwesomeIcon icon={isOpen ? faTimes : faBars} />
                 </div>
             </div>
-            {/* Mobile Menu */}
-            <div className={`fixed top-0 left-0 w-full h-full bg-white z-20 transform ${isOpen ? "translate-x-0" : "-translate-x-full"} transition-transform duration-500 ease-in-out`}>
-                <div className="flex flex-col items-center justify-center h-full">
+            {/* Movil Menu */}
+            <div className={`fixed top-16 left-0 w-72 h-full bg-white z-20 transform ${isOpen ? "translate-x-0" : "-translate-x-full"} transition-transform duration-700 ease-in-out`}>
+                <div className="flex flex-col pl-12 pt-20 h-full">
                     <a href="#" className="hover:text-gray-500 mb-4 text-xl" onClick={toggleMenu}>Inicio</a>
                     <a href="#" className="hover:text-gray-500 mb-4 text-xl" onClick={toggleMenu}>Infomacion</a>                          
                     <a href="#" className="hover:text-gray-500 mb-4 text-xl" onClick={toggleMenu}>Tegnologias</a>

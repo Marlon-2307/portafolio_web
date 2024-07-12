@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Maven_Pro } from "next/font/google";
 import "./Styles/globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const maven = Maven_Pro({
+  weight: '500',
+  subsets: ['latin'],
+});
 
 export const metadata: Metadata = {
   title: "Portafolio Web",
@@ -16,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={inter.className}>{children}</body>
+      <body className={maven.className}>{children}</body>
     </html>
   );
 }

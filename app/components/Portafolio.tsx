@@ -36,9 +36,11 @@ const Portfolio: React.FC = () => {
     ];
 
     return (
-        <div className="pb-16 pt-10 w-[80%] mx-auto">
-            <h2 className="text-gray-900 mb-12 text-3xl font-semibold max-sm:text-center">Portafolio</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-2 py-8">
+        <div className="pb-16 pt-10 bg-gray-100" style={{ backgroundImage: 'url("/fondo2.webp")' }}>
+            <h2 className="text-gray-900 mb-12 text-3xl font-semibold max-sm:text-center w-[80%] mx-auto">
+                Portafolio
+            </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-2 py-8 w-[80%] mx-auto">
                 {projects.map((project, index) => (
                     <div key={index} className="relative h-44 w-full overflow-hidden rounded-sm group">
                         <Image 
