@@ -36,7 +36,7 @@ const Portfolio: React.FC = () => {
     ];
 
     return (
-        <div className="pb-16 pt-10 bg-gray-100" style={{ backgroundImage: 'url("/fondo2.webp")' }}>
+        <div className="pb-16 pt-10 bg-gray-100 bg-cover bg-center" style={{ backgroundImage: 'url("/black-white.jpg")' }}>
             <h2 className="text-gray-900 mb-12 text-3xl font-semibold max-sm:text-center w-[80%] mx-auto">
                 Portafolio
             </h2>

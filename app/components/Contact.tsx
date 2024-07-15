@@ -89,7 +89,7 @@ const Contact: React.FC = () => {
                 </div>
             )}
 
-            <div className="bg-white">
+            <div>
                 <div className="flex flex-col md:flex-row p-6 gap-12 w-[85%] mx-auto py-20">
                     <div className="md:w-1/3 mb-6 md:mb-0">
                         <div className="text-white">

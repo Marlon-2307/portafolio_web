@@ -4,7 +4,7 @@ const Banner: React.FC = () => {
     return (
         <>
           <div className="relative h-screen">
-            <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url("/fondo2.webp")' }}>           
+            <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url("/black-white.jpg")' }}>           
             </div>
             <div className="relative flex flex-col justify-center items-center h-full text-white">
                 <div className="textos text-center w-[65%] mx-auto">
@@ -15,7 +15,7 @@ const Banner: React.FC = () => {
                         ¡Hola! Soy Marlon Colon, un desarrollador web apasionado y orientado a resultados, que administra sitios web y aplicaciones que conducen al éxito del producto general.
                     </p>
                     <div className="mt-6 flex flex-wrap gap-4 justify-end max-sm:flex-col max-sm:items-stretch">
-                        <a href="#" className="bg-white hover:bg-gray-700 text-black hover:text-white py-3 px-10 rounded-sm max-sm:w-full">
+                        <a href="#" className="bg-white border border-gray-600 hover:bg-gray-700 text-black hover:text-white py-3 px-10 rounded-sm max-sm:w-full">
                             Portafolio
                         </a>
                         <a href="https://drive.google.com/file/d/1scHgEEyrXPohoduNBupx0Pbn8QfFdvka/view?usp=drive_link" className="bg-gray-600 text-white hover:bg-gray-700 py-3 px-6 rounded-sm max-sm:w-full">
