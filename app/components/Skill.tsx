@@ -4,8 +4,8 @@ import Image from "next/image";
 const Skill: React.FC = () => {
     return (
         <>
-        <div className="py-10">
-            <h1 className="text-gray-900 text-3xl font-semibold w-[80%] mx-auto max-sm:text-center">Tegnologias</h1>
+        <div className="py-10" id="skill">
+            <h1 className="text-gray-900 text-4xl font-semibold w-[80%] mx-auto max-sm:text-center">Tegnologias</h1>
             <div className="flex justify-center gap-12 py-14 flex-wrap max-sm:grid-cols-3 w-[80%] mx-auto">
                 {[
                     { src: "/img/Logo-Git.png", alt: "Logo-git" },

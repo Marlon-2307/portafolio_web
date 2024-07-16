@@ -6,6 +6,7 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  theme: {
   extend: {
     fontFamily: {
       'sans': ['Roboto', 'Arial', 'sans-serif'], 
@@ -19,8 +20,13 @@ const config: Config = {
     animation: {
       'bounce-custom': 'bounce 1s infinite',
     },
+
+    backgroundImage: {
+      'parallax': 'url("/black-white.jpg")',
+    },
   },
-  
+},
   plugins: [],
 };
+
 export default config;

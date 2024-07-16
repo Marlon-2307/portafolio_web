@@ -3,8 +3,8 @@ import React from "react";
 const About: React.FC = () => {
     return (
         <>
-        <div className="px-4">
-             <h2 className="text-gray-900 p-4 pt-16 w-[85%] mx-auto text-3xl font-semibold max-sm:text-center" data-aos="zoom-in-right">Información</h2>
+        <div className="px-4" id="about">
+             <h2 className="text-gray-900 p-4 pt-16 w-[85%] mx-auto text-4xl font-semibold max-sm:text-center" data-aos="zoom-in-right">Información</h2>
                 <div className="w-[90%] mx-auto p-12">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                         <div className="p-10 rounded-md hover:shadow-md">

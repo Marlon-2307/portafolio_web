@@ -36,13 +36,13 @@ const Portfolio: React.FC = () => {
     ];
 
     return (
-        <div className="pb-16 pt-10 bg-gray-100 bg-cover bg-center" style={{ backgroundImage: 'url("/black-white.jpg")' }}>
-            <h2 className="text-gray-900 mb-12 text-3xl font-semibold max-sm:text-center w-[80%] mx-auto">
+        <div className="pb-16 pt-10 bg-gray-100 bg-parallax bg-fixed bg-cover bg-center" id="portafolio">
+            <h2 className="text-gray-900 mb-12 text-4xl font-semibold max-sm:text-center w-[80%] mx-auto">
                 Portafolio
             </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-2 py-8 w-[80%] mx-auto">
                 {projects.map((project, index) => (
-                    <div key={index} className="relative h-44 w-full overflow-hidden rounded-sm group">
+                    <div key={index} className="relative h-44 w-full overflow-hidden rounded-sm group shadow-sm">
                         <Image 
                             src={project.src} 
                             alt={project.alt} 

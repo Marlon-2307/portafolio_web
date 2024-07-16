@@ -1,10 +1,11 @@
 import React from "react";
+import Link from "next/link";
 
 const Banner: React.FC = () => {
     return (
         <>
           <div className="relative h-screen">
-            <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url("/black-white.jpg")' }}>           
+            <div className="absolute inset-0 bg-parallax bg-fixed bg-cover bg-center">           
             </div>
             <div className="relative flex flex-col justify-center items-center h-full text-white">
                 <div className="textos text-center w-[65%] mx-auto">
@@ -15,12 +16,16 @@ const Banner: React.FC = () => {
                         ¡Hola! Soy Marlon Colon, un desarrollador web apasionado y orientado a resultados, que administra sitios web y aplicaciones que conducen al éxito del producto general.
                     </p>
                     <div className="mt-6 flex flex-wrap gap-4 justify-end max-sm:flex-col max-sm:items-stretch">
-                        <a href="#" className="bg-white border border-gray-600 hover:bg-gray-700 text-black hover:text-white py-3 px-10 rounded-sm max-sm:w-full">
-                            Portafolio
-                        </a>
-                        <a href="https://drive.google.com/file/d/1scHgEEyrXPohoduNBupx0Pbn8QfFdvka/view?usp=drive_link" className="bg-gray-600 text-white hover:bg-gray-700 py-3 px-6 rounded-sm max-sm:w-full">
-                            Descargar CV
-                        </a>
+                        <Link href="#portafolio">
+                            <div className="bg-white border border-gray-500 hover:bg-gray-700 text-black hover:text-white py-3 px-10 rounded-sm max-sm:w-full">
+                                Portafolio
+                            </div>
+                        </Link>
+                        <Link href="https://drive.google.com/file/d/1scHgEEyrXPohoduNBupx0Pbn8QfFdvka/view?usp=drive_link">
+                            <div className="bg-gray-600 text-white hover:bg-gray-700 py-3 px-6 rounded-sm max-sm:w-full">
+                                Descargar CV
+                            </div>
+                        </Link>
                     </div>
                 </div>
             </div>
