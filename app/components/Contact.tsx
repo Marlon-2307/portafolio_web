@@ -162,7 +162,7 @@ const Contact: React.FC = () => {
                                 <input
                                     type="submit"
                                     value="Enviar"
-                                    className="w-full border border-gray-700 text-gray-800 hover:text-white py-2 rounded-sm cursor-pointer hover:bg-gray-700 transition duration-300 uppercase"
+                                    className="w-full bg-gray-800 text-white text-gray-800 hover:text-white py-2 rounded-sm cursor-pointer hover:bg-gray-700 transition duration-300 uppercase"
                                 />
                             </div>
                         </form>
