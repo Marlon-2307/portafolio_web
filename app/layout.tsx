@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Maven_Pro } from "next/font/google";
+import { Prompt } from "next/font/google";
 import "./Styles/globals.css";
 
-const maven = Maven_Pro({
-  weight: '500',
+const maven = Prompt({
+  weight: '400',
   subsets: ['latin'],
 });
 

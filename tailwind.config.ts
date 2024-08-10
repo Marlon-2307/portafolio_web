@@ -7,24 +7,25 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-  extend: {
-    fontFamily: {
-      'sans': ['Roboto', 'Arial', 'sans-serif'], 
-    },
-    keyframes: {
-      bounce: {
-        '0%, 100%': { transform: 'translateY(0)' },
-        '50%': { transform: 'translateY(-10px)' },
+    extend: {
+      keyframes: {
+        bounce: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+      },
+      animation: {
+        'bounce-custom': 'bounce 1s infinite',
+      },
+
+      backgroundImage: {
+        'parallax': 'url("/fondo7.webp")',
+      },
+
+      boxShadow: {
+        'text-shadow': '2px 2px 4px rgba(0, 0, 0, 0.5)', // Define la sombra de texto
       },
     },
-    animation: {
-      'bounce-custom': 'bounce 1s infinite',
-    },
-
-    backgroundImage: {
-      'parallax': 'url("/black-white.jpg")',
-    },
-  },
 },
   plugins: [],
 };

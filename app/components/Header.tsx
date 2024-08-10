@@ -13,22 +13,22 @@ const Header: React.FC = () => {
     return (
         <>
             {/* Escritorio Menu */}
-            <div className="fixed top-0 left-0 right-0 z-10 flex justify-around py-4 px-4 bg-white shadow-xl">
+            <div className="fixed top-0 left-0 right-0 z-10 flex justify-between items-center py-6 px-16 max-sm:px-6 bg-white shadow-sm">
                 <div>
-                    <a className="text-black text-4xl" href="#"><h3>Code <span className="text-gray-700 text-lg">Mac.</span></h3></a>
+                    <a className="text-gray-900 hover:text-gray-700 text-4xl" href="#"><h3>Marlon <span className="text-gray-500 text-xl">Colon.</span></h3></a>
                 </div>  
-                <nav className="hidden md:flex items-center gap-8">
+                <nav className="hidden md:flex items-center gap-10">
                     <Link href="/">
-                        <div className="hover:text-gray-500 border-b-2 border-gray-800">Inicio</div>
+                        <div className="text-gray-600 hover:text-gray-800 transition-transform duration-300 transform hover:translate-y-2 hover:scale-105">Inicio</div>
                     </Link>
                     <Link href="#about">
-                        <div className="hover:text-gray-500">Infomacion</div> 
+                        <div className="text-gray-600 hover:text-gray-800 transition-transform duration-300 transform hover:translate-y-2 hover:scale-105">Infomacion</div> 
                     </Link>
                     <Link href="#skill">
-                        <div className="hover:text-gray-500">Tegnologias</div>
+                        <div className="text-gray-600 hover:text-gray-800 transition-transform duration-300 transform hover:translate-y-2 hover:scale-105">Portafolio</div>
                     </Link>                
                     <Link href="#contact">
-                        <div className="hover:text-gray-500">Contacto</div>
+                        <div className="text-gray-600 hover:text-gray-800 transition-transform duration-300 transform hover:translate-y-2 hover:scale-105">Contacto</div>
                     </Link>
                 </nav>
                 <div className="md:hidden text-3xl p-0 m-0 cursor-pointer z-50" onClick={toggleMenu}>
@@ -36,22 +36,30 @@ const Header: React.FC = () => {
                 </div>
             </div>
             {/* Movil Menu */}
-            <div className={`fixed top-16 left-0 w-72 h-full bg-white z-20 transform ${isOpen ? "translate-x-0" : "-translate-x-full"} transition-transform duration-700 ease-in-out`}>
-                <div className="flex flex-col pl-12 pt-20 h-full">
-                <Link href="/">
-                        <div className="hover:text-gray-500 mb-4 text-xl" onClick={toggleMenu}>Inicio</div>
+            <div className={`fixed top-20 left-0 w-full h-64 bg-white z-20 transform ${isOpen ? "translate-x-0" : "-translate-x-full"} transition-transform duration-700 ease-in-out`}>
+                <div className="flex flex-col pl-12 pt-14 h-full">
+                    <Link href="/">
+                        <div className="text-gray-600 hover:text-gray-800 mb-4 text-xl transition-transform duration-300 transform hover:translate-x-2 hover:scale-105 cursor-pointer">
+                            Inicio
+                        </div>
                     </Link>
                     <Link href="#about">
-                        <div className="hover:text-gray-500 mb-4 text-xl" onClick={toggleMenu}>Infomacion</div> 
+                        <div className="text-gray-600 hover:text-gray-800 mb-4 text-xl transition-transform duration-300 transform hover:translate-x-2 hover:scale-105 cursor-pointer">
+                            Información
+                        </div>
                     </Link>
                     <Link href="#skill">
-                        <div className="hover:text-gray-500 mb-4 text-xl" onClick={toggleMenu}>Tegnologias</div>
-                    </Link>                
+                        <div className="text-gray-600 hover:text-gray-800 mb-4 text-xl transition-transform duration-300 transform hover:translate-x-2 hover:scale-105 cursor-pointer">
+                            Portafolio
+                        </div>
+                    </Link>
                     <Link href="#contact">
-                        <div className="hover:text-gray-500 mb-4 text-xl" onClick={toggleMenu}>Contacto</div>
+                        <div className="text-gray-600 hover:text-gray-800 mb-4 text-xl transition-transform duration-300 transform hover:translate-x-2 hover:scale-105 cursor-pointer">
+                            Contacto
+                        </div>
                     </Link>
                 </div>
-            </div>
+        </div>
         </>
     );
 };

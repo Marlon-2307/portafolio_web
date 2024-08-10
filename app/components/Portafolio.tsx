@@ -4,64 +4,86 @@ import Image from "next/image";
 const Portfolio: React.FC = () => {
     const projects = [
         { 
+            src: "/proyecto7.png", 
+            alt: "imagen-proyecto7", 
+            githubLink: "https://github.com/usuario/proyecto7", 
+            webLink: "https://webdelproyecto7.com", 
+            description: "Proyecto CM Electronics",
+            technologies: ["Next.js", "React", "Tailwind CSS", "HTML", "TypeScript", "Node.js"],
+        },
+        { 
             src: "/proyecto1.png", 
             alt: "imagen-proyecto1", 
             githubLink: "https://github.com/Marlon-2307/Craig-Barber", 
-            description: "Proyecto de barbería",
-        },
-        { 
-            src: "/proyecto2.png", 
-            alt: "imagen-proyecto2", 
-            githubLink: "https://github.com/Marlon-2307/Dental-Clinic", 
-            description: "Clínica dental",
-        },
-        { 
-            src: "/proyecto4.png", 
-            alt: "imagen-proyecto4", 
-            githubLink: "https://github.com/Marlon-2307/Portafolio",  
-            description: "Mi portafolio personal",
+            webLink: "https://craig-barber.com", 
+            description: "Proyecto Craigs Barberia",
+            technologies: ["Next.js", "React", "Tailwind CSS", "HTML", "TypeScript", "Node.js",],
         },
         { 
             src: "/proyecto6.png", 
             alt: "imagen-proyecto6", 
             githubLink: "https://github.com/Marlon-2307/GYM-POWER", 
-            description: "Proyecto de gimnasio",
+            webLink: "https://gym-power.com", 
+            description: "Proyecto GYM-POWER",
+            technologies: ["HTML", "CSS", "JavaScript"],
         },
         { 
-            src: "/proyecto7.png", 
-            alt: "imagen-proyecto7", 
-            githubLink: "https://github.com/usuario/proyecto7", 
-            description: "Descripción del proyecto 7",
+            src: "/proyecto2.png", 
+            alt: "imagen-proyecto2", 
+            githubLink: "https://marlon-2307.github.io/Dental-Clinic/index.html", 
+            webLink: "https://dental-clinic.com", 
+            description: "Proyecto Clínica Dental",
+            technologies: ["HTML", "CSS", "SASS", "Node.js"],
         },
     ];
 
     return (
-        <div className="pb-16 pt-10 bg-gray-100 bg-parallax bg-fixed bg-cover bg-center" id="portafolio">
-            <h2 className="text-gray-900 mb-12 text-4xl font-semibold max-sm:text-center w-[80%] mx-auto">
-                Portafolio
+        <div className="pb-16 pt-12 bg-parallax bg-fixed bg-cover bg-center" id="portafolio">
+            <h2 className="text-white mb-12 text-5xl font-bold max-sm:text-center w-[80%] mx-auto">
+                Portafolio <span><hr className="text-gray-900 w-[30%]" /></span>
             </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-2 py-8 w-[80%] mx-auto">
+            <div className="flex flex-col sm:grid-cols-2 md:grid-cols-2 gap-10 w-[75%] mx-auto">
                 {projects.map((project, index) => (
-                    <div key={index} className="relative h-44 w-full overflow-hidden rounded-sm group shadow-sm">
-                        <Image 
-                            src={project.src} 
-                            alt={project.alt} 
-                            layout="fill" 
-                            objectFit="cover" 
-                            loading="lazy" 
-                            className="rounded-sm transition-transform duration-300 transform group-hover:scale-105"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t via-black/70 from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end items-start p-4">
+                    <div key={index} className="flex flex-col md:flex-row gap-12 max-md:gap-6">
+                        <div className="relative h-60 w-3/6 max-md:h-52 max-md:w-full overflow-hidden rounded-sm group shadow-sm">
+                            <Image 
+                                src={project.src} 
+                                alt={project.alt} 
+                                layout="fill" 
+                                objectFit="cover" 
+                                loading="lazy" 
+                                className="rounded-sm transition-transform duration-300 transform group-hover:scale-105 shadow-lg"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t via-black/70 from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end items-start p-4">
+                                <a 
+                                    href={project.githubLink} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    className="text-white text-sm underline hover:text-gray-300 transition-colors"
+                                >
+                                    Codigo GitHub
+                                </a>
+                            </div>
+                        </div>
+                        <div className="flex flex-col justify-between">
+                            <div className="w-80">
+                                <p className="text-white text-2xl font-semibold mb-2">{project.description}</p>
+                                <p className="text-gray-100 text-sm mb-2">Tecnologías utilizadas:</p>
+                                <ul className="list-disc list-inside text-gray-200 text-sm">
+                                    {project.technologies.map((tech, techIndex) => (
+                                        <li key={techIndex}>{tech}</li>
+                                    ))}
+                                </ul>
+                            </div>
                             <a 
-                                href={project.githubLink} 
+                                href={project.webLink} 
                                 target="_blank" 
                                 rel="noopener noreferrer" 
-                                className="text-white text-sm underline hover:text-gray-300 transition-colors"
+                                className="bg-white text-gray-800 text-sm no-underline mt-4 py-2 px-10 text-center rounded-sm transition-transform duration-300 transform hover:translate-y-2 hover:scale-100"
                             >
-                                Ver en GitHub
+                                Ver Proyecto
                             </a>
                         </div>
-                        <p className="mt-2 text-center text-gray-700">{project.description}</p>
                     </div>
                 ))}
             </div>

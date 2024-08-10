@@ -5,7 +5,6 @@ import Header from "./components/Header";
 import Banner from "./components/Banner";
 import About from "./components/About";
 import Portafolio from "./components/Portafolio";
-import Skill from "./components/Skill";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Iconos from "./components/Iconos";
@@ -18,7 +17,6 @@ const Home: React.FC = () => {
     <Banner />
     <About />
     <Portafolio />
-    <Skill />
     <Contact />
     <Footer />
     <Iconos />

@@ -10,10 +10,10 @@ const Contact: React.FC = () => {
         observacion: ""
     });
 
-    const [modalOpen, setModalOpen] = useState(false); // Control de apertura de ventana modal
-    const [modalMessage, setModalMessage] = useState(''); // Mensaje que muestra en la ventana modal
-    const [isCheck, setIsCheck] = useState(false); // Visualizacion del icono check o close
-    const [redirectOnClose, setRedirectOnClose] = useState(false); // Controlar la redirección después de cerrar la ventana modal
+    const [modalOpen, setModalOpen] = useState(false); 
+    const [modalMessage, setModalMessage] = useState(''); 
+    const [isCheck, setIsCheck] = useState(false); 
+    const [redirectOnClose, setRedirectOnClose] = useState(false); 
 
     const router = useRouter();
 
@@ -36,13 +36,13 @@ const Contact: React.FC = () => {
             const data = await response.json();
             console.log("Mensaje enviado:", data);
             setIsCheck(true);
-            setModalMessage("Informacion enviada con exito"); 
+            setModalMessage("Información enviada con éxito"); 
             setModalOpen(true);
             setRedirectOnClose(true); 
         } catch (error) {
             console.error("Error al enviar el mensaje:", error);
             setIsCheck(false);
-            setModalMessage("Error al enviar informacion"); 
+            setModalMessage("Error al enviar información"); 
             setModalOpen(true);
         }
     };
@@ -81,7 +81,7 @@ const Contact: React.FC = () => {
                                     type="button"
                                     onClick={closeModal}
                                 >
-                                    Cerrar
+                                    Volver al Inicio
                                 </button>
                             </div>
                         </div>
@@ -89,16 +89,16 @@ const Contact: React.FC = () => {
                 </div>
             )}
 
-            <div id="contact">
-                <div className="flex flex-col md:flex-row p-6 gap-12 w-[85%] mx-auto py-20">
-                    <div className="md:w-1/3 mb-6 md:mb-0">
+            <div id="contact" className="py-14 px-6">
+                <div className="flex flex-col md:flex-row gap-12 w-[85%] mx-auto">           
+                    <div className="w-1/3 max-md:w-full mb-6 max-md:mb-0 md:mb-0">
+                        <h3 className="text-5xl mb-12 text-gray-900 font-semibold">Contacto <span><hr className="text-gray-800 w-[70%] max-md:w[10%]" /></span></h3>
                         <div className="text-white">
-                            <h3 className="text-2xl mb-4 text-black font-semibold">Mantengámonos en contacto</h3>
-                            <p className="mb-2 text-gray-800">
+                            <p className="mb-6 text-gray-800">
                                 Teléfono: <br />
                                 <span className="text-gray-500">(+57) 300 6052169</span>
                             </p>
-                            <p className="mb-2 text-gray-800">
+                            <p className="mb-6 text-gray-800">
                                 Email: <br />
                                 <span className="text-gray-500">marloncolon23@gmail.com</span>
                             </p>
@@ -108,8 +108,8 @@ const Contact: React.FC = () => {
                             </p>
                         </div>
                     </div>
-                    <div className="md:w-2/3">
-                        <form onSubmit={handleSubmit} data-aos="fade-up" action="#" method="post" className="space-y-4 mt-12">
+                    <div className="w-2/3 max-md:w-full mt-14">
+                        <form onSubmit={handleSubmit} className="space-y-4 mt-12">
                             <div>
                                 <label className="block text-gray-800 mb-1" htmlFor="nombre">Tu Nombre:</label>
                                 <input
@@ -123,7 +123,7 @@ const Contact: React.FC = () => {
                                 />
                             </div>
                             <div>
-                                <label className="block text-gray-800 mb-1" htmlFor="telefono">Tu Telefono:</label>
+                                <label className="block text-gray-800 mb-1" htmlFor="telefono">Tu Teléfono:</label>
                                 <input
                                     type="text"
                                     id="telefono"
@@ -147,7 +147,7 @@ const Contact: React.FC = () => {
                                 />
                             </div>
                             <div>
-                                <label className="block text-gray-800 mb-1" htmlFor="mensaje">Tu Mensaje:</label>
+                                <label className="block text-gray-800 mb-1" htmlFor="observacion">Tu Mensaje:</label>
                                 <textarea
                                     id="observacion"
                                     name="observacion"
@@ -162,7 +162,7 @@ const Contact: React.FC = () => {
                                 <input
                                     type="submit"
                                     value="Enviar"
-                                    className="w-full bg-gray-600 text-white py-2 rounded-sm cursor-pointer hover:bg-gray-700 transition duration-300 uppercase"
+                                    className="w-full border border-gray-700 text-gray-800 hover:text-white py-2 rounded-sm cursor-pointer hover:bg-gray-700 transition duration-300 uppercase"
                                 />
                             </div>
                         </form>

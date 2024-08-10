@@ -21,11 +21,10 @@ const Skill: React.FC = () => {
                 ].map((logo, index) => (
                     <div key={index} className="relative h-8 w-10 grayscale hover:grayscale-0 transition duration-300">
                         <Image src={logo.src} alt={logo.alt} layout="fill" objectFit="contain" />
-                    </div>
+                    </div>                 
                 ))}
             </div>
         </div>
-    <hr className="text-gray-100 w-[80%] mx-auto"/>
     </>
     );
 };
