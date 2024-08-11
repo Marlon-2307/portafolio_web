@@ -56,33 +56,25 @@ const Portfolio: React.FC = () => {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t via-black/70 from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end items-start p-4">
                                 <a 
-                                    href={project.githubLink} 
+                                    href={project.webLink} 
                                     target="_blank" 
                                     rel="noopener noreferrer" 
-                                    className="text-white text-sm underline hover:text-gray-300 transition-colors"
+                                    className="border border-white text-white text-sm no-underline p-2 w-[40%] mx-auto rounded-sm text-center hover:bg-white hover:text-gray-800 transition-color"
                                 >
-                                    Codigo GitHub
+                                    Ver Proyecto
                                 </a>
                             </div>
                         </div>
                         <div className="flex flex-col justify-between">
                             <div className="w-80">
                                 <p className="text-white text-2xl font-semibold mb-2">{project.description}</p>
-                                <p className="text-gray-100 text-sm mb-2">Tecnologías utilizadas:</p>
-                                <ul className="list-disc list-inside text-gray-200 text-sm">
+                                <p className="text-white text-sm mb-2">Tecnologías utilizadas:</p>
+                                <ul className="list-disc list-inside text-white text-sm">
                                     {project.technologies.map((tech, techIndex) => (
                                         <li key={techIndex}>{tech}</li>
                                     ))}
                                 </ul>
                             </div>
-                            <a 
-                                href={project.webLink} 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
-                                className="bg-white text-gray-800 text-sm no-underline mt-4 py-2 px-10 text-center rounded-sm transition-transform duration-300 transform hover:translate-y-2 hover:scale-100"
-                            >
-                                Ver Proyecto
-                            </a>
                         </div>
                     </div>
                 ))}

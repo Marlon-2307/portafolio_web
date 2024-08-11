@@ -109,7 +109,7 @@ const Contact: React.FC = () => {
                         </div>
                     </div>
                     <div className="w-2/3 max-md:w-full mt-14">
-                        <form onSubmit={handleSubmit} className="space-y-4 mt-12">
+                        <form onSubmit={handleSubmit} className="space-y-4 mt-12 max-md:mt-2">
                             <div>
                                 <label className="block text-gray-800 mb-1" htmlFor="nombre">Tu Nombre:</label>
                                 <input
@@ -158,11 +158,11 @@ const Contact: React.FC = () => {
                                     className="w-full px-4 py-2 border-b-2 border-gray-700 focus:outline-none resize-none"
                                 ></textarea>
                             </div>
-                            <div>
+                            <div className="flex justify-end">
                                 <input
                                     type="submit"
                                     value="Enviar"
-                                    className="w-full bg-gray-800 text-white text-gray-800 hover:text-white py-2 rounded-sm cursor-pointer hover:bg-gray-700 transition duration-300 uppercase"
+                                    className="w-[50%] max-md:w-full border border-gray-700 text-gray-800 hover:text-white py-4 rounded-sm cursor-pointer hover:bg-gray-800 transition duration-300"
                                 />
                             </div>
                         </form>

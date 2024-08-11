@@ -24,7 +24,7 @@ const Header: React.FC = () => {
                     <Link href="#about">
                         <div className="text-gray-600 hover:text-gray-800 transition-transform duration-300 transform hover:translate-y-2 hover:scale-105">Infomacion</div> 
                     </Link>
-                    <Link href="#skill">
+                    <Link href="#portafolio">
                         <div className="text-gray-600 hover:text-gray-800 transition-transform duration-300 transform hover:translate-y-2 hover:scale-105">Portafolio</div>
                     </Link>                
                     <Link href="#contact">
@@ -48,7 +48,7 @@ const Header: React.FC = () => {
                             Información
                         </div>
                     </Link>
-                    <Link href="#skill">
+                    <Link href="#portafolio">
                         <div className="text-gray-600 hover:text-gray-800 mb-4 text-xl transition-transform duration-300 transform hover:translate-x-2 hover:scale-105 cursor-pointer">
                             Portafolio
                         </div>
