@@ -8,7 +8,7 @@ const Portfolio: React.FC = () => {
             alt: "imagen-proyecto7", 
             githubLink: "https://github.com/usuario/proyecto7", 
             webLink: "https://webdelproyecto7.com", 
-            description: "Proyecto CM Electronics",
+            description: "CM Electronics",
             technologies: ["Next.js", "React", "Tailwind CSS", "HTML", "TypeScript", "Node.js"],
         },
         { 
@@ -16,7 +16,7 @@ const Portfolio: React.FC = () => {
             alt: "imagen-proyecto1", 
             githubLink: "https://github.com/Marlon-2307/Craig-Barber", 
             webLink: "https://craig-barber.com", 
-            description: "Proyecto Craigs Barberia",
+            description: "Craigs Barberia",
             technologies: ["Next.js", "React", "Tailwind CSS", "HTML", "TypeScript", "Node.js",],
         },
         { 
@@ -24,7 +24,7 @@ const Portfolio: React.FC = () => {
             alt: "imagen-proyecto6", 
             githubLink: "https://github.com/Marlon-2307/GYM-POWER", 
             webLink: "https://gym-power.com", 
-            description: "Proyecto GYM-POWER",
+            description: "PGYM-POWER",
             technologies: ["HTML", "CSS", "JavaScript"],
         },
         { 
@@ -32,7 +32,7 @@ const Portfolio: React.FC = () => {
             alt: "imagen-proyecto2", 
             githubLink: "https://marlon-2307.github.io/Dental-Clinic/index.html", 
             webLink: "https://dental-clinic.com", 
-            description: "Proyecto Clínica Dental",
+            description: "Clínica Dental",
             technologies: ["HTML", "CSS", "SASS", "Node.js"],
         },
     ];
@@ -42,10 +42,10 @@ const Portfolio: React.FC = () => {
             <h2 className="text-white mb-12 text-5xl font-bold max-sm:text-center w-[80%] mx-auto">
                 Portafolio <span><hr className="text-gray-900 w-[30%]" /></span>
             </h2>
-            <div className="flex flex-col sm:grid-cols-2 md:grid-cols-2 gap-10 w-[75%] mx-auto">
+            <div className="flex flex-col sm:grid-cols-2 md:grid-cols-2 gap-10 w-[60%] mx-auto">
                 {projects.map((project, index) => (
                     <div key={index} className="flex flex-col md:flex-row gap-12 max-md:gap-6">
-                        <div className="relative h-60 w-3/6 max-md:h-52 max-md:w-full overflow-hidden rounded-sm group shadow-sm">
+                        <div className="relative h-56 w-3/6 max-md:h-52 max-md:w-full overflow-hidden rounded-sm group shadow-sm">
                             <Image 
                                 src={project.src} 
                                 alt={project.alt} 
@@ -59,7 +59,7 @@ const Portfolio: React.FC = () => {
                                     href={project.webLink} 
                                     target="_blank" 
                                     rel="noopener noreferrer" 
-                                    className="border border-white text-white text-sm no-underline p-2 w-[40%] mx-auto rounded-sm text-center hover:bg-white hover:text-gray-800 transition-color"
+                                    className="border border-white text-white text-sm no-underline p-2 w-[40%] mx-auto max-md:w-full rounded-sm text-center hover:bg-white hover:text-gray-800 transition-color"
                                 >
                                     Ver Proyecto
                                 </a>

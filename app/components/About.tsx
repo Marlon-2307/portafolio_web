@@ -24,7 +24,7 @@ const About: React.FC = () => {
                 Aquí encontrarás información detallada sobre mi perfil, mis áreas de trabajo y las habilidades que he desarrollado, con un enfoque particular en programación y tecnología.
             </p>
 
-            <div className="w-[90%] mx-auto max-md:w-[100%] p-12 grid grid-cols-2 gap-20 max-md:block mt-6">
+            <div className="w-[80%] mx-auto max-md:w-[100%] p-12 grid grid-cols-2 gap-20 max-md:block mt-6">
                 <div>
                     <h2 className="text-2xl mb-4 max-md:text-center">Conóceme</h2>
                     <div className="py-8">
@@ -33,7 +33,7 @@ const About: React.FC = () => {
                         </p>
                     </div>  
                     <Link href="/">
-                        <div className="mt-6 md:mt-8 flex justify-start">
+                        <div className="mt-6 md:mt-8 flex justify-start max-md:hidden">
                             <a href="#portafolio" className="border border-gray-800 text-gray-900 hover:bg-gray-800 hover:text-white py-3 px-12 rounded-sm max-sm:w-full max-sm:text-center transition-transform duration-300 transform hover:translate-y-2 hover:scale-105">Contactar</a>
                         </div>   
                     </Link>       

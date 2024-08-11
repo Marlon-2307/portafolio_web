@@ -88,87 +88,90 @@ const Contact: React.FC = () => {
                     </div>
                 </div>
             )}
+ 
+ <div className="w-[80%] mx-auto py-12">
+            <h3 className="text-5xl mb-12 text-gray-900 font-semibold max-md:text-center">
+                Contacto <span><hr className="text-gray-800 w-[30%]" /></span>
+            </h3>
+            <div className="grid grid-cols-[1fr_2fr] gap-10 max-md:block w-[95%] mx-auto">
+                {/* Información de Contacto */}
+                <div className="md:w-[90%] mx-auto text-gray-800 mt-14">
+                    <p className="mb-6">
+                        Teléfono: <br />
+                        <span className="text-gray-500">(+57) 300 6052169</span>
+                    </p>
+                    <p className="mb-6">
+                        Email: <br />
+                        <span className="text-gray-500">marloncolon23@gmail.com</span>
+                    </p>
+                    <p>
+                        Vivo en: <br />
+                        <span className="text-gray-500">Barranquilla, Colombia.</span>
+                    </p>
+                </div>
 
-            <div id="contact" className="py-14 px-6">
-                <div className="flex flex-col md:flex-row gap-12 w-[85%] mx-auto">           
-                    <div className="w-1/3 max-md:w-full mb-6 max-md:mb-0 md:mb-0">
-                        <h3 className="text-5xl mb-12 text-gray-900 font-semibold">Contacto <span><hr className="text-gray-800 w-[70%] max-md:w[10%]" /></span></h3>
-                        <div className="text-white">
-                            <p className="mb-6 text-gray-800">
-                                Teléfono: <br />
-                                <span className="text-gray-500">(+57) 300 6052169</span>
-                            </p>
-                            <p className="mb-6 text-gray-800">
-                                Email: <br />
-                                <span className="text-gray-500">marloncolon23@gmail.com</span>
-                            </p>
-                            <p className="text-gray-800">
-                                Vivo en: <br />
-                                <span className="text-gray-500">Barranquilla, Colombia.</span>
-                            </p>
+                {/* Formulario de Contacto */}
+                <div className="md:w-[90%] mx-auto mt-14 max-md:mt-20">
+                    <form onSubmit={handleSubmit} className="space-y-4">
+                        <div>
+                            <label className="block text-gray-800 mb-1" htmlFor="nombre">Tu Nombre:</label>
+                            <input
+                                type="text"
+                                id="nombre"
+                                name="nombre"
+                                value={formData.nombre}
+                                onChange={handleChange}
+                                required
+                                className="w-full px-4 py-2 border-b-2 border-gray-700 focus:outline-none"
+                            />
                         </div>
-                    </div>
-                    <div className="w-2/3 max-md:w-full mt-14">
-                        <form onSubmit={handleSubmit} className="space-y-4 mt-12 max-md:mt-2">
-                            <div>
-                                <label className="block text-gray-800 mb-1" htmlFor="nombre">Tu Nombre:</label>
-                                <input
-                                    type="text"
-                                    id="nombre"
-                                    name="nombre"
-                                    value={formData.nombre}
-                                    onChange={handleChange}
-                                    required
-                                    className="w-full px-4 py-2 border-b-2 border-gray-700 focus:outline-none"
-                                />
-                            </div>
-                            <div>
-                                <label className="block text-gray-800 mb-1" htmlFor="telefono">Tu Teléfono:</label>
-                                <input
-                                    type="text"
-                                    id="telefono"
-                                    name="telefono"
-                                    value={formData.telefono}
-                                    onChange={handleChange}
-                                    required
-                                    className="w-full px-4 py-2 border-b-2 border-gray-700 focus:outline-none"
-                                />
-                            </div>
-                            <div>
-                                <label className="block text-gray-800 mb-1" htmlFor="email">Tu Email:</label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    value={formData.email}
-                                    onChange={handleChange}
-                                    required
-                                    className="w-full px-4 py-2 border-b-2 border-gray-700 focus:outline-none"
-                                />
-                            </div>
-                            <div>
-                                <label className="block text-gray-800 mb-1" htmlFor="observacion">Tu Mensaje:</label>
-                                <textarea
-                                    id="observacion"
-                                    name="observacion"
-                                    value={formData.observacion}
-                                    onChange={handleChange}
-                                    rows={4}
-                                    required
-                                    className="w-full px-4 py-2 border-b-2 border-gray-700 focus:outline-none resize-none"
-                                ></textarea>
-                            </div>
-                            <div className="flex justify-end">
-                                <input
-                                    type="submit"
-                                    value="Enviar"
-                                    className="w-[50%] max-md:w-full border border-gray-700 text-gray-800 hover:text-white py-4 rounded-sm cursor-pointer hover:bg-gray-800 transition duration-300"
-                                />
-                            </div>
-                        </form>
-                    </div>
+                        <div>
+                            <label className="block text-gray-800 mb-1" htmlFor="telefono">Tu Teléfono:</label>
+                            <input
+                                type="text"
+                                id="telefono"
+                                name="telefono"
+                                value={formData.telefono}
+                                onChange={handleChange}
+                                required
+                                className="w-full px-4 py-2 border-b-2 border-gray-700 focus:outline-none"
+                            />
+                        </div>
+                        <div>
+                            <label className="block text-gray-800 mb-1" htmlFor="email">Tu Email:</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}
+                                required
+                                className="w-full px-4 py-2 border-b-2 border-gray-700 focus:outline-none"
+                            />
+                        </div>
+                        <div>
+                            <label className="block text-gray-800 mb-1" htmlFor="observacion">Tu Mensaje:</label>
+                            <textarea
+                                id="observacion"
+                                name="observacion"
+                                value={formData.observacion}
+                                onChange={handleChange}
+                                rows={4}
+                                required
+                                className="w-full px-4 py-2 border-b-2 border-gray-700 focus:outline-none resize-none"
+                            ></textarea>
+                        </div>
+                        <div className="flex justify-end">
+                            <input
+                                type="submit"
+                                value="Enviar"
+                                className="w-[50%] max-md:w-full border border-gray-700 text-gray-800 hover:text-white py-4 rounded-sm cursor-pointer hover:bg-gray-800 transition duration-300"
+                            />
+                        </div>
+                    </form>
                 </div>
             </div>
+        </div>
         </>
     );
 };
