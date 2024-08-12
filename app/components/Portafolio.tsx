@@ -7,15 +7,13 @@ const Portfolio: React.FC = () => {
             src: "/proyecto7.png", 
             alt: "imagen-proyecto7", 
             githubLink: "https://github.com/usuario/proyecto7", 
-            webLink: "https://webdelproyecto7.com", 
             description: "Proyecto CM Electronics",
             technologies: ["Next.js", "React", "Tailwind CSS", "HTML", "TypeScript", "Node.js"],
         },
         { 
             src: "/proyecto1.png", 
             alt: "imagen-proyecto1", 
-            githubLink: "https://github.com/Marlon-2307/Craig-Barber", 
-            webLink: "https://craig-barber.com", 
+            githubLink: "https://github.com/Marlon-2307/Craigs_barberia", 
             description: "Proyecto Craigs Barberia",
             technologies: ["Next.js", "React", "Tailwind CSS", "HTML", "TypeScript", "Node.js",],
         },
@@ -23,7 +21,6 @@ const Portfolio: React.FC = () => {
             src: "/proyecto6.png", 
             alt: "imagen-proyecto6", 
             githubLink: "https://github.com/Marlon-2307/GYM-POWER", 
-            webLink: "https://gym-power.com", 
             description: "Proyecto GYM-POWER",
             technologies: ["HTML", "CSS", "JavaScript"],
         },
@@ -31,7 +28,6 @@ const Portfolio: React.FC = () => {
             src: "/proyecto2.png", 
             alt: "imagen-proyecto2", 
             githubLink: "https://marlon-2307.github.io/Dental-Clinic/index.html", 
-            webLink: "https://dental-clinic.com", 
             description: "Proyecto Clínica Dental",
             technologies: ["HTML", "CSS", "SASS", "Node.js"],
         },
@@ -56,10 +52,10 @@ const Portfolio: React.FC = () => {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t via-black/70 from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end items-start p-4">
                                 <a 
-                                    href={project.webLink} 
+                                    href={project.githubLink} 
                                     target="_blank" 
                                     rel="noopener noreferrer" 
-                                    className="border-white text-white text-sm underline hover:text-gray-300 transition-colors"
+                                    className="text-white text-sm underline hover:text-gray-300 transition-colors"
                                 >
                                     Codigo GitHub
                                 </a>
