@@ -33,7 +33,7 @@ const About: React.FC = () => {
                 Aquí encontrarás información detallada sobre mi perfil, mis áreas de trabajo y las habilidades que he desarrollado, con un enfoque particular en programación y tecnología.
             </motion.p>
 
-            <div className="w-[80%] mx-auto p-12 grid grid-cols-2 gap-20 max-md:block max-md:w-[90%] mt-4">
+            <div className="w-[80%] mx-auto p-12 grid grid-cols-2 gap-20 max-md:block max-md:w-[100%] mt-4">
                 <motion.div
                     className="border border-gray-200 rounded-md p-8 max-md:mb-2"
                     initial={{ opacity: 0, x: -20 }}
