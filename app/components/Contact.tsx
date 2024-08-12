@@ -89,7 +89,7 @@ const Contact: React.FC = () => {
                 </div>
             )}
  
- <div className="w-[80%] mx-auto py-12">
+        <div className="w-[80%] mx-auto py-12">
             <h3 className="text-5xl mb-12 text-gray-900 font-semibold max-md:text-center">
                 Contacto <span><hr className="text-gray-800 w-[30%]" /></span>
             </h3>
@@ -165,7 +165,7 @@ const Contact: React.FC = () => {
                             <input
                                 type="submit"
                                 value="Enviar"
-                                className="w-[50%] max-md:w-full border border-gray-700 text-gray-800 hover:text-white py-4 rounded-sm cursor-pointer hover:bg-gray-800 transition duration-300"
+                                className="w-full sm:w-[50%] border border-gray-700 text-gray-800 hover:text-white py-4 rounded-sm cursor-pointer hover:bg-gray-800 transition duration-300"
                             />
                         </div>
                     </form>

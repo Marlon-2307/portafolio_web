@@ -4,16 +4,5 @@
 
 body {
     background-color: rgb(255, 255, 255);
+    overflow-x: hidden;
 }
-
-@keyframes move-right {
-    0% {
-      transform: translateX(0);
-    }
-    50% {
-      transform: translateX(25px); /* Ajusta el valor según la distancia que quieras mover */
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }

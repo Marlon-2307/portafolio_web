@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Prompt } from "next/font/google";
 import "./Styles/globals.css";
 
-const maven = Prompt({
+const prompt = Prompt({
   weight: '400',
   subsets: ['latin'],
 });
@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={maven.className}>{children}</body>
+      <body className={prompt.className}>{children}</body>
     </html>
   );
 }

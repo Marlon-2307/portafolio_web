@@ -49,8 +49,8 @@ const Portfolio: React.FC = () => {
                             <Image 
                                 src={project.src} 
                                 alt={project.alt} 
-                                layout="fill" 
-                                objectFit="cover" 
+                                fill 
+                                style={{ objectFit: "cover" }} 
                                 loading="lazy" 
                                 className="rounded-sm transition-transform duration-300 transform group-hover:scale-105 shadow-lg"
                             />
