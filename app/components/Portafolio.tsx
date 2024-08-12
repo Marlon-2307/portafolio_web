@@ -8,7 +8,7 @@ const Portfolio: React.FC = () => {
             alt: "imagen-proyecto7", 
             githubLink: "https://github.com/usuario/proyecto7", 
             webLink: "https://webdelproyecto7.com", 
-            description: "CM Electronics",
+            description: "Proyecto CM Electronics",
             technologies: ["Next.js", "React", "Tailwind CSS", "HTML", "TypeScript", "Node.js"],
         },
         { 
@@ -16,7 +16,7 @@ const Portfolio: React.FC = () => {
             alt: "imagen-proyecto1", 
             githubLink: "https://github.com/Marlon-2307/Craig-Barber", 
             webLink: "https://craig-barber.com", 
-            description: "Craigs Barberia",
+            description: "Proyecto Craigs Barberia",
             technologies: ["Next.js", "React", "Tailwind CSS", "HTML", "TypeScript", "Node.js",],
         },
         { 
@@ -24,7 +24,7 @@ const Portfolio: React.FC = () => {
             alt: "imagen-proyecto6", 
             githubLink: "https://github.com/Marlon-2307/GYM-POWER", 
             webLink: "https://gym-power.com", 
-            description: "PGYM-POWER",
+            description: "Proyecto GYM-POWER",
             technologies: ["HTML", "CSS", "JavaScript"],
         },
         { 
@@ -32,7 +32,7 @@ const Portfolio: React.FC = () => {
             alt: "imagen-proyecto2", 
             githubLink: "https://marlon-2307.github.io/Dental-Clinic/index.html", 
             webLink: "https://dental-clinic.com", 
-            description: "Clínica Dental",
+            description: "Proyecto Clínica Dental",
             technologies: ["HTML", "CSS", "SASS", "Node.js"],
         },
     ];
@@ -42,15 +42,15 @@ const Portfolio: React.FC = () => {
             <h2 className="text-white mb-12 text-5xl font-bold max-sm:text-center w-[80%] mx-auto">
                 Portafolio <span><hr className="text-gray-900 w-[30%]" /></span>
             </h2>
-            <div className="flex flex-col sm:grid-cols-2 md:grid-cols-2 gap-10 w-[60%] mx-auto">
+            <div className="flex flex-col sm:grid-cols-2 md:grid-cols-2 gap-10 w-[75%] mx-auto">
                 {projects.map((project, index) => (
                     <div key={index} className="flex flex-col md:flex-row gap-12 max-md:gap-6">
-                        <div className="relative h-56 w-3/6 max-md:h-52 max-md:w-full overflow-hidden rounded-sm group shadow-sm">
+                        <div className="relative h-60 w-3/6 max-md:h-52 max-md:w-full overflow-hidden rounded-sm group shadow-sm">
                             <Image 
                                 src={project.src} 
                                 alt={project.alt} 
-                                fill 
-                                style={{ objectFit: "cover" }} 
+                                layout="fill" 
+                                objectFit="cover" 
                                 loading="lazy" 
                                 className="rounded-sm transition-transform duration-300 transform group-hover:scale-105 shadow-lg"
                             />
@@ -59,17 +59,17 @@ const Portfolio: React.FC = () => {
                                     href={project.webLink} 
                                     target="_blank" 
                                     rel="noopener noreferrer" 
-                                    className="border border-white text-white text-sm no-underline p-2 w-[40%] mx-auto max-md:w-full rounded-sm text-center hover:bg-white hover:text-gray-800 transition-color"
+                                    className="border-white text-white text-sm underline hover:text-gray-300 transition-colors"
                                 >
-                                    Ver Proyecto
+                                    Codigo GitHub
                                 </a>
                             </div>
                         </div>
                         <div className="flex flex-col justify-between">
                             <div className="w-80">
                                 <p className="text-white text-2xl font-semibold mb-2">{project.description}</p>
-                                <p className="text-white text-sm mb-2">Tecnologías utilizadas:</p>
-                                <ul className="list-disc list-inside text-white text-sm">
+                                <p className="text-gray-100 text-sm mb-2">Tecnologías utilizadas:</p>
+                                <ul className="list-disc list-inside text-gray-200 text-sm">
                                     {project.technologies.map((tech, techIndex) => (
                                         <li key={techIndex}>{tech}</li>
                                     ))}
