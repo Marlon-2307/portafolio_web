@@ -63,7 +63,7 @@ const About: React.FC = () => {
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                             >
-                                <div className="text-lg text-gray-700 w-32">
+                                <div className="text-md text-gray-600 w-32">
                                     {skill.nombre}
                                 </div>
                                 <div className="flex-1 h-6 flex items-center">

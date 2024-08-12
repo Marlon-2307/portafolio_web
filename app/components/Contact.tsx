@@ -88,28 +88,25 @@ const Contact: React.FC = () => {
                     </div>
                 </div>
             )}
-
-            <div id="contact" className="py-14 px-6">
-                <div className="flex flex-col md:flex-row gap-12 w-[85%] mx-auto">           
-                    <div className="w-1/3 max-md:w-full mb-6 max-md:mb-0 md:mb-0">
-                        <h3 className="text-5xl mb-12 text-gray-900 font-semibold max-md:text-center">Contacto <span><hr className="text-gray-800 w-[70%] max-md:w[10%]" /></span></h3>
-                        <div className="text-white">
-                            <p className="mb-6 text-gray-800">
-                                Teléfono: <br />
-                                <span className="text-gray-500">(+57) 300 6052169</span>
-                            </p>
-                            <p className="mb-6 text-gray-800">
-                                Email: <br />
-                                <span className="text-gray-500">marloncolon23@gmail.com</span>
-                            </p>
-                            <p className="text-gray-800">
-                                Vivo en: <br />
-                                <span className="text-gray-500">Barranquilla, Colombia.</span>
-                            </p>
-                        </div>
+            <div className="w-[80%] mx-auto py-12">    
+            <h3 className="text-5xl mb-12 text-gray-900 font-semibold max-md:text-center">Contacto <span><hr className="text-gray-800 w-[30%]" /></span></h3>
+                <div className="grid grid-cols-[1fr_2fr] gap-4 w-[90%] mx-auto max-md:block">      
+                    <div className="w-[100%] max-md:w-full mt-6 max-md:mb-14">                         
+                        <p className="mb-6 text-gray-800">
+                            Teléfono: <br />
+                            <span className="text-gray-500">(+57) 300 6052169</span>
+                        </p>
+                        <p className="mb-6 text-gray-800">
+                            Email: <br />
+                            <span className="text-gray-500">marloncolon23@gmail.com</span>
+                        </p>
+                        <p className="text-gray-800">
+                            Vivo en: <br />
+                            <span className="text-gray-500">Barranquilla, Colombia.</span>
+                        </p>
                     </div>
-                    <div className="w-2/3 max-md:w-full mt-14">
-                        <form onSubmit={handleSubmit} className="space-y-4 mt-12 max-md:mt-2">
+                    <div className="w-[100%] max-md:w-full">
+                        <form onSubmit={handleSubmit} className="space-y-4 mt-6 max-md:mt-2">
                             <div>
                                 <label className="block text-gray-800 mb-1" htmlFor="nombre">Tu Nombre:</label>
                                 <input
@@ -167,7 +164,7 @@ const Contact: React.FC = () => {
                             </div>
                         </form>
                     </div>
-                </div>
+                </div> 
             </div>
         </>
     );
