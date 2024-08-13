@@ -12,7 +12,7 @@ const Portfolio: React.FC = () => {
             alt: "CM Electronics - Captura de pantalla", 
             githubLink: "https://github.com/usuario/proyecto7", 
             nombre: "CM Electronics",
-            description: "Tienda en línea de productos electrónicos de alta calidad. Los usuarios pueden explorar una amplia gama de dispositivos, desde teléfonos inteligentes hasta equipos de audio, con una experiencia de compra segura y eficiente.",
+            description: "Tienda en línea especializada en productos electrónicos de alta calidad. Ofrecemos una amplia selección de dispositivos, desde equipos de audio hasta accesorios, brindando a los usuarios una experiencia de compra segura, rápida y eficiente.",
             technologies: ["Next.js", "React", "Tailwind CSS", "HTML", "TypeScript", "Node.js"],
         },
         { 
@@ -20,7 +20,7 @@ const Portfolio: React.FC = () => {
             alt: "Craig's Barbería - Captura de pantalla", 
             githubLink: "https://github.com/Marlon-2307/Craigs_barberia", 
             nombre: "Craig's Barbería",
-            description: "Sitio web profesional para una barbería, que ofrece a los clientes la posibilidad de reservar citas, conocer los servicios y productos, y explorar estilos de cortes de cabello modernos. Diseñado para reflejar la elegancia y la calidad del servicio.",
+            description: "Tienda en línea especializada en productos electrónicos de alta calidad. Ofrecemos una amplia selección de dispositivos, desde equipos de audio hasta accesorios, garantizando una experiencia de compra segura, rápida y eficiente para los usuarios.",
             technologies: ["Next.js", "React", "Tailwind CSS", "HTML", "TypeScript", "Node.js",],
         },
         { 
