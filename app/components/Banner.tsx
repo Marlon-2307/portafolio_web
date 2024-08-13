@@ -7,7 +7,7 @@ const Banner: React.FC = () => {
     <div className="relative h-screen">
       <div className="absolute inset-0 bg-parallax bg-fixed bg-cover bg-center opacity-100"></div>
       <div className="relative flex flex-col justify-center items-center h-full text-white px-4 md:px-8 lg:px-16">
-        <div className="text-center w-full max-w-4xl mt-10 max-sm:mt-10">
+        <div className="text-center w-full max-w-4xl py-auto">
           <h2 className="text-white text-6xl font-bold">
             Hola, <span>Soy Marlon Colon.</span>
           </h2>

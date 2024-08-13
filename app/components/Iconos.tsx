@@ -7,7 +7,7 @@ const Iconos: React.FC = () => {
             <a href="mailto:marloncolon23@gmail.com" className="text-gray-700 hover:text-gray-900 mb-4">
                 <FaEnvelope className="w-6 h-6" />
             </a>
-            <a href="https://wa.me/3006052169" className="text-gray-700 hover:text-gray-900 mb-4">
+            <a href="https://wa.me/+573006052169" className="text-gray-700 hover:text-gray-900 mb-4">
                 <FaWhatsapp className="w-6 h-6" />
             </a>
             <a href="https://www.linkedin.com/in/marlon-colon-504aa0271/" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-gray-900 mb-4">
