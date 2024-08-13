@@ -88,7 +88,8 @@ const Contact: React.FC = () => {
                     </div>
                 </div>
             )}
-            <div className="w-[80%] mx-auto py-12">    
+
+            <div className="w-[80%] mx-auto py-12" id="contact">    
             <h3 className="text-5xl mb-12 text-gray-900 font-semibold max-md:text-center">Contacto <span><hr className="text-gray-800 w-[30%]" /></span></h3>
                 <div className="grid grid-cols-[1fr_2fr] gap-4 w-[90%] mx-auto max-md:block">      
                     <div className="w-[100%] max-md:w-full mt-6 max-md:mb-14">                         
