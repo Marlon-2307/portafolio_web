@@ -20,7 +20,7 @@ const Portfolio: React.FC = () => {
             alt: "Craig's Barbería - Captura de pantalla", 
             githubLink: "https://github.com/Marlon-2307/Craigs_barberia", 
             nombre: "Craig's Barbería",
-            description: "Tienda en línea especializada en productos electrónicos de alta calidad. Ofrecemos una amplia selección de dispositivos, desde equipos de audio hasta accesorios, garantizando una experiencia de compra segura, rápida y eficiente para los usuarios.",
+            description: "Sitio web profesional para una barbería que permite a los clientes reservar citas, conocer los servicios y productos, y explorar estilos de cortes de cabello modernos. Diseñado para reflejar la elegancia y calidad del servicio.",
             technologies: ["Next.js", "React", "Tailwind CSS", "HTML", "TypeScript", "Node.js",],
         },
         { 
@@ -56,7 +56,7 @@ const Portfolio: React.FC = () => {
             <div className="grid grid-cols-3 max-lg:grid-cols-2 max-md:block gap-10 w-[75%] mx-auto">
                 {projects.map((project, index) => (
                     <div key={index} className="group perspective hover:rotate-y-180 duration-700 transform-style-preserve-3d rounded-lg overflow-hidden h-auto max-md:mb-4 hover:shadow-md border borber-gray-300">
-                    <div className="relative h-44 w-full overflow-hidden rounded-t-xl">
+                    <div className="relative h-44 w-full overflow-hidden rounded-t-md">
                         <Image 
                             src={project.src} 
                             alt={project.alt} 
