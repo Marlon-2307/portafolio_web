@@ -100,7 +100,7 @@ const Portfolio: React.FC = () => {
                                 href={project.githubLink} 
                                 target="_blank" 
                                 rel="noopener noreferrer" 
-                                className="text-gray-500 text-sm no-underline hover:text-gray-600 transition-colors border border-gray-300 p-2 rounded-sm"
+                                className="text-gray-500 text-sm no-underline hover:text-gray-600 transition-colors border border-gray-300 p-2 rounded-md"
                             >
                                 Código en GitHub
                             </a>

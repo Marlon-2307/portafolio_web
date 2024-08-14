@@ -91,8 +91,8 @@ const Contact: React.FC = () => {
 
             <div className="w-[80%] mx-auto py-12" id="contact">    
             <h3 className="text-5xl mb-12 text-gray-900 font-semibold max-md:text-center">Contacto <span><hr className="text-gray-800 w-[30%]" /></span></h3>
-                <div className="grid grid-cols-[1fr_2fr] gap-16 w-[90%] mx-auto max-md:block max-md:w-[100%]">      
-                    <div className="w-[100%] max-md:w-full max-md:mb-14 text-lg border border-gray-300 px-12 py-8 rounded-md h-72">                         
+                <div className="grid grid-cols-[1fr_2fr] gap-12 w-[90%] mx-auto max-md:block max-md:w-[100%]">      
+                    <div className="w-[100%] max-md:w-full max-md:mb-6 text-lg border border-gray-300 px-12 py-8 rounded-md h-72">                         
                         <p className="mb-6 text-gray-800">
                             Teléfono: <br />
                             <span className="text-gray-500">(+57) 300 6052169</span>
