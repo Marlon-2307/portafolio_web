@@ -91,8 +91,8 @@ const Contact: React.FC = () => {
 
             <div className="w-[80%] mx-auto py-12" id="contact">    
             <h3 className="text-5xl mb-12 text-gray-900 font-semibold max-md:text-center">Contacto <span><hr className="text-gray-800 w-[30%]" /></span></h3>
-                <div className="grid grid-cols-[1fr_2fr] gap-4 w-[90%] mx-auto max-md:block">      
-                    <div className="w-[100%] max-md:w-full mt-6 max-md:mb-14">                         
+                <div className="grid grid-cols-[1fr_2fr] gap-16 w-[90%] mx-auto max-md:block max-md:w-[100%]">      
+                    <div className="w-[100%] max-md:w-full max-md:mb-14 text-lg border border-gray-300 px-12 py-8 rounded-md h-72">                         
                         <p className="mb-6 text-gray-800">
                             Teléfono: <br />
                             <span className="text-gray-500">(+57) 300 6052169</span>
@@ -106,7 +106,7 @@ const Contact: React.FC = () => {
                             <span className="text-gray-500">Barranquilla, Colombia.</span>
                         </p>
                     </div>
-                    <div className="w-[100%] max-md:w-full">
+                    <div className="w-[100%] mx-auto max-md:w-full border border-gray-300 px-12 py-8 rounded-md">
                         <form onSubmit={handleSubmit} className="space-y-4 mt-6 max-md:mt-2">
                             <div>
                                 <label className="block text-gray-800 mb-1" htmlFor="nombre">Tu Nombre:</label>
@@ -160,7 +160,7 @@ const Contact: React.FC = () => {
                                 <input
                                     type="submit"
                                     value="Enviar"
-                                    className="w-[50%] max-md:w-full border border-gray-700 text-gray-800 hover:text-white py-4 rounded-sm cursor-pointer hover:bg-gray-800 transition duration-300"
+                                    className="w-[50%] max-md:w-full border border-gray-500 text-gray-800 hover:text-white py-4 rounded-md cursor-pointer hover:bg-gray-800 transition duration-300"
                                 />
                             </div>
                         </form>

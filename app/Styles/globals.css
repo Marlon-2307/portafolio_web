@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+html{
+    box-sizing: border-box;
+    font-size: 90%;
+}
+
 body {
     background-color: rgb(255, 255, 255);
 }

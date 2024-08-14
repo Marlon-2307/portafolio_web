@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaWhatsapp, FaAngleUp, FaFileAlt } from 'react-icons/fa';
+import { FaAngleUp, FaFileAlt } from 'react-icons/fa';
 
 const FlotanteBoton: React.FC = () => {
 
@@ -16,7 +16,7 @@ const FlotanteBoton: React.FC = () => {
             {/* Botón de Descargar CV */}
             <button
                 onClick={handleCVDownload}
-                className="flex items-center py-2 px-2 bg-white text-gray-700 rounded-sm shadow-md transition max-sm:buttom-6"
+                className="flex items-center py-2 px-2 bg-white text-gray-700 rounded-md shadow-md transition max-sm:buttom-6"
             >
                 <span className="text-sm mx-2">Descargar CV</span>
                 <FaFileAlt className='w-6 h-6 hover:text-gray-800' />      

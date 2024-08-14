@@ -44,61 +44,72 @@ const Portfolio: React.FC = () => {
     const click = (index: number) => {
         setIsOpen(isOpen === index ? null : index);
     };
+    
 
     return (
-        <div className="pb-16 pt-12 bg-gray- bg-fixed bg-cover bg-center" id="portafolio">
-            <h2 className="text-gray-800 mb-12 text-5xl font-bold w-[80%] mx-auto max-md:text-center">
-                Portafolio
-                <span>
-                    <hr className="text-gray-900 w-[30%] mt-2" />
-                </span>
-            </h2>
-            <div className="grid grid-cols-2 max-lg:grid-cols-2 max-md:block gap-10 w-[72%] mx-auto">
-                {projects.map((project, index) => (
-                    <div key={index} className="group perspective hover:rotate-y-180 duration-700 transform-style-preserve-3d rounded-lg overflow-hidden h-auto max-md:mb-4 hover:shadow-md border borber-gray-300">
-                    <div className="relative h-52 w-full overflow-hidden rounded-t-md">
+        <div className="pb-16 pt-12 bg-fixed bg-cover bg-center" id="portafolio">
+        <h2 className="text-gray-800 mb-12 text-5xl font-bold w-[80%] mx-auto max-md:text-center">
+            Portafolio
+            <span>
+                <hr className="text-gray-900 w-[30%] mt-2" />
+            </span>
+        </h2>
+        <div className="grid grid-cols-2 max-lg:grid-cols-2 max-md:block gap-10 w-[72%] mx-auto max-lg:w-[80%]">
+            {projects.map((project, index) => (
+                <div 
+                    key={index}
+                    className="group relative overflow-hidden rounded-lg cursor-pointer transform transition-transform duration-500 hover:shadow-lg hover:scale-95 border border-gray-300 max-md:mb-4"
+                    onClick={() => click(index)}
+                >
+                    <div 
+                        className="relative h-52 w-full overflow-hidden rounded-t-md bg-gray-100 transition-transform duration-500 transform group-hover:scale-110"
+                    >
                         <Image 
                             src={project.src} 
                             alt={project.alt} 
                             layout="fill" 
                             objectFit="cover" 
                             loading="lazy" 
-                            className="transition-transform duration-300 transform group-hover:scale-105"
+                            className="absolute inset-0 transition-transform duration-700 transform group-hover:translate-z-10"
                         />
                     </div>
-                    <div className="p-6 bg-white">
-                            <p className="text-gray-800 text-xl mb-4">{project.nombre}</p>
-                            <p className="text-gray-500 text-sm mb-8">{project.description}</p>
-                            <div className="flex items-center justify-between cursor-pointer" onClick={() => click(index)}>
-                                <p className="text-gray-500 text-sm mb-2">Tecnologías utilizadas</p>
-                                {isOpen === index ? (
-                                    <FaChevronUp className="text-gray-300 hover:text-gray-500 text-sm" />
-                                ) : (
-                                    <FaChevronDown className="text-gray-300 hover:text-gray-500 text-sm" />
-                                )}
-                            </div>
-                            {isOpen === index && (
-                                <ul className="list-inside text-gray-500 text-sm mt-2">
-                                    {project.technologies.map((tech, techIndex) => (
-                                        <li key={techIndex}>{tech}</li>
-                                    ))}
-                                </ul>
+                    <div className="p-6 bg-white relative z-10 transition-transform duration-700">
+                        <p className="text-gray-800 text-xl mb-4">
+                            {project.nombre}
+                        </p>
+                        <p className="text-gray-500 text-sm mb-8">
+                            {project.description}
+                        </p>
+                        <div className="flex items-center justify-between cursor-pointer" onClick={() => click(index)}>
+                            <p className="text-gray-500 text-sm mb-2">Tecnologías utilizadas</p>
+                            {isOpen === index ? (
+                                <FaChevronUp className="text-gray-300 hover:text-gray-500 text-sm" />
+                            ) : (
+                                <FaChevronDown className="text-gray-300 hover:text-gray-500 text-sm" />
                             )}
+                        </div>
+                        {isOpen === index && (
+                            <ul className="list-inside text-gray-500 text-sm mt-2">
+                                {project.technologies.map((tech, techIndex) => (
+                                    <li key={techIndex}>{tech}</li>
+                                ))}
+                            </ul>
+                        )}
                         <div className="mt-10">
-                        <a 
-                            href={project.githubLink} 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-                            className="text-gray-500 text-sm no-underline hover:text-gray-600 transition-colors border border-gray-300 p-2 rounded-sm"
-                        >
-                            Código en GitHub
-                        </a>
+                            <a 
+                                href={project.githubLink} 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                className="text-gray-500 text-sm no-underline hover:text-gray-600 transition-colors border border-gray-300 p-2 rounded-sm"
+                            >
+                                Código en GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
-                ))}
-            </div>
+            ))}
         </div>
+    </div>
     );
 };
 
