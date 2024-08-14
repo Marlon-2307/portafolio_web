@@ -54,7 +54,7 @@ const About: React.FC = () => {
                     transition={{ duration: 0.5, delay: 0.6 }}
                 >
                     <h2 className="text-gray-900 text-2xl max-md:mt-4 max-md:text-center">Tecnologías</h2>
-                    <div className="flex flex-col gap-2 py-10 w-[90%] mx-auto">
+                    <div className="flex flex-col gap-2 py-10 w-[95%] max-md:w-[85%] mx-auto">
                         {skills.map((skill, index) => (
                             <motion.div
                                 key={index}
