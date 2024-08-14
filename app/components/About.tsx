@@ -35,7 +35,7 @@ const About: React.FC = () => {
 
             <div className="w-[80%] mx-auto p-12 grid grid-cols-2 gap-20 max-lg:block max-md:w-[100%] mt-4 max-lg:mb-4">
                 <motion.div
-                    className="border border-gray-200 rounded-md p-8 max-md:mb-2 max-md:border-none"
+                    className="border border-gray-200 rounded-md p-8 max-md:mb-2 max-md:border-none hover:shadow-md"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
@@ -48,7 +48,7 @@ const About: React.FC = () => {
                     </div>  
                 </motion.div>
                 <motion.div
-                    className="rounded-md p-8 border border-gray-200 max-md:border-none max-md:p-0"
+                    className="rounded-md p-8 border border-gray-200 max-md:border-none max-md:p-0 hover:shadow-md"
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.6 }}

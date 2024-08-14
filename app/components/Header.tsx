@@ -13,7 +13,7 @@ const Header: React.FC = () => {
     return (
         <>
             {/* Escritorio Menu */}
-            <div className="fixed top-0 left-0 right-0 z-10 flex justify-between items-center py-6 px-16 max-sm:px-6 bg-white shadow-sm">
+            <div className="fixed top-0 left-0 right-0 z-10 flex justify-between items-center py-6 px-16 max-sm:px-6 bg-white shadow-md">
                 <div>
                     <a className="text-gray-900 hover:text-gray-700 text-4xl" href="#"><h3>Marlon <span className="text-gray-500 text-xl">Colon.</span></h3></a>
                 </div>  

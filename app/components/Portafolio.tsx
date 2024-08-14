@@ -53,10 +53,10 @@ const Portfolio: React.FC = () => {
                     <hr className="text-gray-900 w-[30%] mt-2" />
                 </span>
             </h2>
-            <div className="grid grid-cols-3 max-lg:grid-cols-2 max-md:block gap-10 w-[75%] mx-auto">
+            <div className="grid grid-cols-2 max-lg:grid-cols-2 max-md:block gap-10 w-[72%] mx-auto">
                 {projects.map((project, index) => (
                     <div key={index} className="group perspective hover:rotate-y-180 duration-700 transform-style-preserve-3d rounded-lg overflow-hidden h-auto max-md:mb-4 hover:shadow-md border borber-gray-300">
-                    <div className="relative h-44 w-full overflow-hidden rounded-t-md">
+                    <div className="relative h-52 w-full overflow-hidden rounded-t-md">
                         <Image 
                             src={project.src} 
                             alt={project.alt} 
