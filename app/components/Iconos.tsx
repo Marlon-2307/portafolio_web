@@ -3,7 +3,7 @@ import { FaEnvelope, FaLinkedin, FaTwitter, FaGithub, FaWhatsapp } from "react-i
 
 const Iconos: React.FC = () => {
     return (
-        <div className="fixed top-3/4 left-0 transform -translate-y-1/2 flex flex-col items-center p-2 bg-white z-10 transition-left duration-500 ease-in-out shadow-md rounded-r-md">
+        <div className="fixed top-3/4 left-0 transform -translate-y-1/2 flex flex-col items-center p-2 bg-white z-10 transition-left duration-500 ease-in-out shadow-md rounded-r-sm">
             <a href="mailto:marloncolon23@gmail.com" className="text-gray-700 hover:text-gray-900 mb-4">
                 <FaEnvelope className="w-6 h-6" />
             </a>

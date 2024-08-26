@@ -16,7 +16,7 @@ const FlotanteBoton: React.FC = () => {
             {/* Botón de Descargar CV */}
             <button
                 onClick={handleCVDownload}
-                className="flex items-center py-2 px-2 bg-white text-gray-700 rounded-md shadow-md transition max-sm:buttom-6"
+                className="flex items-center py-2 px-2 bg-white text-gray-700 rounded-sm shadow-md transition max-sm:buttom-6"
             >
                 <span className="text-sm mx-2">Descargar CV</span>
                 <FaFileAlt className='w-6 h-6 hover:text-gray-800' />      
@@ -25,7 +25,7 @@ const FlotanteBoton: React.FC = () => {
             {/* Botón de Volver Arriba */}
             <button
                 onClick={scrollTop}
-                className="p-2 bg-white text-gray-700 rounded-full shadow-lg hover:bg-gray-800 hover:text-white transition"
+                className="p-2 bg-white text-gray-700 rounded-md shadow-lg hover:bg-gray-400 hover:text-white transition"
             >
                 <FaAngleUp className='w-6 h-6' />
             </button>

@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const Header: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -32,7 +30,12 @@ const Header: React.FC = () => {
                     </Link>
                 </nav>
                 <div className="md:hidden text-3xl p-0 m-0 cursor-pointer z-50" onClick={toggleMenu}>
-                    <FontAwesomeIcon icon={isOpen ? faTimes : faBars} />
+                    {/* Icono de la hamburguesa con animación */}
+                    <div className={`hamburger ${isOpen ? "open" : ""} space-y-2`}>
+                        <div className="w-8 h-0.5 bg-black transition-transform duration-500 transform origin-center linea-1"></div>
+                        <div className="w-8 h-0.5 bg-black transition-opacity duration-500 linea-2"></div>
+                        <div className="w-8 h-0.5 bg-black transition-transform duration-500 transform origin-center linea-3"></div>
+                    </div>
                 </div>
             </div>
             {/* Movil Menu */}
@@ -59,7 +62,20 @@ const Header: React.FC = () => {
                         </div>
                     </Link>
                 </div>
-        </div>
+            </div>
+            <style jsx>{`
+                .open .linea-1 {
+                    transform: rotate(45deg) translateY(10px);
+                }
+
+                .open .linea-2 {
+                    opacity: 0;
+                }
+
+                .open .linea-3 {
+                    transform: rotate(-45deg) translateY(-10px);
+                }
+            `}</style>
         </>
     );
 };
