@@ -25,7 +25,7 @@ const FlotanteBoton: React.FC = () => {
             {/* Botón de Volver Arriba */}
             <button
                 onClick={scrollTop}
-                className="p-2 bg-white text-gray-700 rounded-md shadow-lg hover:bg-gray-400 hover:text-white transition"
+                className="p-2 bg-white text-gray-700 rounded-sm shadow-lg hover:bg-gray-400 hover:text-white transition"
             >
                 <FaAngleUp className='w-6 h-6' />
             </button>
