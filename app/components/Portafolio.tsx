@@ -26,7 +26,7 @@ const Portfolio: React.FC = () => {
         { 
             src: "/proyecto2.png", 
             alt: "Clínica Dental - Captura de pantalla", 
-            githubLink: "https://marlon-2307.github.io/Dental-Clinic/index.html", 
+            githubLink: "https://github.com/Marlon-2307/Dental-Clinic", 
             nombre: "Clínica Dental",
             description: "Sitio web informativo y fácil de usar para una clínica dental, que ofrece a los pacientes la posibilidad de agendar citas, conocer los servicios dentales ofrecidos y consejos sobre salud bucal. Todo con un enfoque el bienestar del paciente.",
             technologies: ["HTML", "CSS", "SASS", "Node.js"],

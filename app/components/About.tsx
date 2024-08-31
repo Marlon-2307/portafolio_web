@@ -10,7 +10,6 @@ const About: React.FC = () => {
         { nombre: "TailwindCSS", percentage: 75 },
         { nombre: "CSS3", percentage: 85 },
         { nombre: "HTML5", percentage: 85 },
-        { nombre: "Sass", percentage: 65 },
         { nombre: "GIT - GitHub", percentage: 70 }
     ];
 
