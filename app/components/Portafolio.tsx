@@ -142,32 +142,34 @@ const Portfolio: React.FC = () => {
             {/* Modal */}
             {isModalOpen && selectedProject && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80" onClick={closeModal}>
-                    <div className=" p-6 rounded-md w-[90%] max-w-4xl relative" onClick={(e) => e.stopPropagation()}>
-
-                        <div className="relative">
-                            <div className="flex justify-between items-center mb-4">
-                                <button 
-                                    className="text-gray-400 p-2 rounded-full text-4xl animate-pulse"
-                                    onClick={showPrevImage}
-                                >
-                                    <FaChevronLeft />
-                                </button>
+                    <div 
+                        className="relative p-6 rounded-md w-[90%] max-w-4xl"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <div className="flex justify-between items-center mb-4">
+                            <button 
+                                className="text-gray-400 p-2 rounded-full text-4xl hover:text-gray-600"
+                                onClick={showPrevImage}
+                            >
+                                <FaChevronLeft />
+                            </button>
+                            <div className="flex-grow flex items-center justify-center">
                                 <Image 
                                     src={selectedProject.images[currentImageIndex]} 
                                     alt={`Imagen del proyecto ${selectedProject.nombre}`} 
                                     layout="responsive" 
                                     width={700}
                                     height={500}
-                                    objectFit="cover" 
-                                    className="rounded-md mx-auto"
+                                    objectFit="contain" 
+                                    className="rounded-md"
                                 />
-                                <button 
-                                    className="text-gray-400 p-2 rounded-full text-4xl animate-pulse"
-                                    onClick={showNextImage}
-                                >
-                                    <FaChevronRight />
-                                </button>
                             </div>
+                            <button 
+                                className="text-gray-400 p-2 rounded-full text-4xl hover:text-gray-600"
+                                onClick={showNextImage}
+                            >
+                                <FaChevronRight />
+                            </button>
                         </div>
                     </div>
                 </div>
