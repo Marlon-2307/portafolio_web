@@ -23,7 +23,7 @@ const Header: React.FC = () => {
                         <div className="text-gray-600 hover:text-gray-800 transition-transform duration-300 transform hover:translate-y-2 hover:scale-105">Infomacion</div> 
                     </Link>
                     <Link href="#portafolio">
-                        <div className="text-gray-600 hover:text-gray-800 transition-transform duration-300 transform hover:translate-y-2 hover:scale-105">Portafolio</div>
+                        <div className="text-gray-600 hover:text-gray-800 transition-transform duration-300 transform hover:translate-y-2 hover:scale-105">Proyectos</div>
                     </Link>                
                     <Link href="#contact">
                         <div className="text-gray-600 hover:text-gray-800 transition-transform duration-300 transform hover:translate-y-2 hover:scale-105">Contacto</div>

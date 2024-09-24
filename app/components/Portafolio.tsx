@@ -79,7 +79,7 @@ const Portfolio: React.FC = () => {
     return (
         <div className="pb-12 pt-12 bg-fixed bg-cover bg-center" id="portafolio">
             <h2 className="text-gray-800 mb-12 text-5xl font-bold w-[80%] mx-auto max-md:text-center">
-                Portafolio
+                Proyectos
                 <span>
                     <hr className="text-gray-900 w-[30%] mt-2" />
                 </span>

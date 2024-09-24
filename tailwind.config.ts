@@ -24,7 +24,7 @@ const config: Config = {
       },
 
       backgroundImage: {
-        'parallax': 'url("/fondo7.webp")',
+        'parallax': 'url("/black-white.jpg")',
       },
 
       boxShadow: {
