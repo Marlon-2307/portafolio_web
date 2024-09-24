@@ -21,7 +21,7 @@ const Banner: React.FC = () => {
               </div>
             </Link>
             <div className="mt-8">
-              <KeyboardArrowDownIcon className="text-white text-3xl animate-bounce" />
+              <KeyboardArrowDownIcon className="text-gray-800 text-3xl animate-bounce" />
             </div>
           </div>
         </div>
