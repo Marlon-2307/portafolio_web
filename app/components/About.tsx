@@ -3,14 +3,13 @@ import { motion } from "framer-motion";
 
 const About: React.FC = () => {
     const skills = [
-        { nombre: "Next.js", percentage: 70 },
-        { nombre: "React", percentage: 70 },
-        { nombre: "JavaScript", percentage: 75 },
-        { nombre: "TypeScript", percentage: 65 },
-        { nombre: "TailwindCSS", percentage: 75 },
-        { nombre: "CSS3", percentage: 85 },
-        { nombre: "HTML5", percentage: 85 },
-        { nombre: "GIT - GitHub", percentage: 70 }
+        { nombre: "Next.js", percentage: 65 },
+        { nombre: "React", percentage: 65 },
+        { nombre: "JavaScript", percentage: 65 },
+        { nombre: "Tailwind CSS", percentage: 75 },
+        { nombre: "HTML5", percentage: 75 },
+        { nombre: "MySQL", percentage: 50 },
+        { nombre: "Git - GitHub", percentage: 65 }
     ];
 
     return (

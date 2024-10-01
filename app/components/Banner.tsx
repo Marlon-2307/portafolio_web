@@ -16,7 +16,7 @@ const Banner: React.FC = () => {
           </p>
           <div className="mt-10 flex flex-col items-center">
             <Link href="#portafolio">
-              <div className="border border-gray-800 text-gray-800 hover:bg-gray-700 hover:text-white shadow-lg py-3 px-16 rounded-sm    transition-transform duration-300 transform hover:translate-y-2 hover:scale-105">
+              <div className="border border-gray-600 text-gray-800 hover:bg-gray-700 hover:text-white shadow-lg py-3 px-16 rounded-sm    transition-transform duration-300 transform hover:translate-y-2 hover:scale-105">
                 Proyectos
               </div>
             </Link>
