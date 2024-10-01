@@ -5,7 +5,7 @@ const About: React.FC = () => {
     const skills = [
         { nombre: "Next.js", percentage: 65 },
         { nombre: "React", percentage: 65 },
-        { nombre: "JavaScript", percentage: 65 },
+        { nombre: "JavaScript", percentage: 75 },
         { nombre: "Tailwind CSS", percentage: 75 },
         { nombre: "HTML5", percentage: 75 },
         { nombre: "MySQL", percentage: 50 },
