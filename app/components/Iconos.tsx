@@ -13,9 +13,6 @@ const Iconos: React.FC = () => {
             <a href="https://www.linkedin.com/in/marlon-colon-504aa0271/" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-gray-900 mb-4">
                 <FaLinkedin className="w-6 h-6" />
             </a>
-            <a href="https://twitter.com/MarlonColon3" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-gray-900 mb-4">
-                <FaTwitter className="w-6 h-6" />
-            </a>
             <a href="https://github.com/Marlon-2307" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-gray-900">
                 <FaGithub className="w-6 h-6" />
             </a>
