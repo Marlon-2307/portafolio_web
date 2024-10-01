@@ -8,7 +8,7 @@ const FlotanteBoton: React.FC = () => {
     };
 
     const handleCVDownload = () => {
-        window.open('https://drive.google.com/file/d/1wY8YLkwVVHXXqYSLQpA3fmNqay3ebtas/view?usp=drive_link', '_blank');
+        window.open('https://drive.google.com/file/d/1R08f3dKtKs1NRaXRLlc95BsiWTgOxeYD/view?usp=drive_link', '_blank');
     };
 
     return (
@@ -18,7 +18,7 @@ const FlotanteBoton: React.FC = () => {
                 onClick={handleCVDownload}
                 className="flex items-center py-2 px-2 bg-white text-gray-700 rounded-sm shadow-md transition max-sm:buttom-6"
             >
-                <span className="text-sm mx-2">Descargar CV</span>
+                <span className="text-sm mx-2">Curriculum Vitae</span>
                 <FaFileAlt className='w-6 h-6 hover:text-gray-800' />      
             </button>
 
