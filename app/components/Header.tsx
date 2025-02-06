@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// import DarkMode from "../components/DarkMode";
 import Link from "next/link";
 
 const Header: React.FC = () => {
@@ -28,6 +29,7 @@ const Header: React.FC = () => {
                     <Link href="#contact">
                         <div className="text-gray-600 hover:text-gray-800 transition-transform duration-300 transform hover:translate-y-2 hover:scale-105">Contacto</div>
                     </Link>
+                    {/* <DarkMode /> */}
                 </nav>
                 <div className="md:hidden text-3xl p-0 m-0 cursor-pointer z-50" onClick={toggleMenu}>
                     {/* Icono de la hamburguesa con animación */}
@@ -61,6 +63,7 @@ const Header: React.FC = () => {
                             Contacto
                         </div>
                     </Link>
+                    {/* <DarkMode /> */}
                 </div>
             </div>
             <style jsx>{`

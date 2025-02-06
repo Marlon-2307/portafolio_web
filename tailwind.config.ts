@@ -30,6 +30,13 @@ const config: Config = {
       boxShadow: {
         'text-shadow': '2px 2px 4px rgba(0, 0, 0, 0.5)', // Define la sombra de texto
       },
+
+      darkMode: 'class',
+      
+      theme: {
+        extend: {},
+      },
+
     },
 },
   plugins: [],

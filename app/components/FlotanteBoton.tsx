@@ -8,11 +8,11 @@ const FlotanteBoton: React.FC = () => {
     };
 
     const handleCVDownload = () => {
-        window.open('https://drive.google.com/file/d/1R08f3dKtKs1NRaXRLlc95BsiWTgOxeYD/view?usp=drive_link', '_blank');
+        window.open('https://drive.google.com/file/d/1q0aZfUrKaclYG5UHrfRTQr6hh1_bf9t5/view?usp=drive_link', '_blank');
     };
 
     return (
-        <div className="fixed bottom-6 right-4 flex flex-col gap-2 items-end">
+        <div className="fixed bottom-2 right-4 flex flex-col gap-2 items-end">
             {/* Botón de Descargar CV */}
             <button
                 onClick={handleCVDownload}

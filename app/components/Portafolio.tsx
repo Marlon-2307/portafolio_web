@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react"; // Importa React y useState, useEffect
 import { FaChevronLeft, FaChevronRight, FaChevronDown, FaChevronUp } from "react-icons/fa";
 import Image from "next/image";
+import 'aos/dist/aos.css';  // Importa los estilos de AOS
+import AOS from 'aos';      // Importa la librería de animaciones
 
 const Portfolio: React.FC = () => {
     const [isOpen, setIsOpen] = useState<number | null>(null);
@@ -62,8 +64,16 @@ const Portfolio: React.FC = () => {
         initializeImageIndexes();
     }, []);
 
+      // Inicializa AOS en el hook useEffect
+    useEffect(() => {
+        AOS.init({
+        duration: 1000,  // Duración de la animación
+        once: true,      // Si la animación ocurre solo una vez
+        });
+    }, []);
+
     return (
-        <div className=" pt-12 bg-fixed bg-cover bg-center" id="portafolio">
+        <div className="pt-12 bg-fixed bg-cover bg-center" id="portafolio">
             <h2 className="text-gray-800 mb-12 text-5xl font-bold w-[80%] mx-auto max-md:text-center">
                 Proyectos
                 <span>
@@ -77,7 +87,7 @@ const Portfolio: React.FC = () => {
                         className="group relative overflow-hidden rounded-md cursor-pointer max-md:mb-4 grid grid-cols-2 max-lg:grid-cols-2 max-md:block gap-10 w-[75%] mx-auto max-lg:w-[80%] mb-10"
                     >
                         {/* Contenedor de la Imagen */}
-                        <div className="relative h-60 w-full max-md:h-44 overflow-hidden rounded-t-md bg-gray-100">
+                        <div className="relative h-60 w-full max-md:h-44 overflow-hidden rounded-t-md bg-white">
                             <Image 
                                 src={project.images[currentImageIndexes[index]]} 
                                 alt={project.alt} 
@@ -86,6 +96,7 @@ const Portfolio: React.FC = () => {
                                 height={500} 
                                 objectFit="cover" 
                                 loading="lazy" 
+                                data-aos="flip-down"
                                 className="absolute inset-0 transition-transform duration-700 ease-in-out transform group-hover:scale-110 border rounded-md"
                             />
                             {/* Botones para navegar entre imágenes */}
