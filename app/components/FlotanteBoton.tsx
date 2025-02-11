@@ -8,7 +8,7 @@ const FlotanteBoton: React.FC = () => {
     };
 
     const handleCVDownload = () => {
-        window.open('https://drive.google.com/file/d/1KZeKfwaJ1ljxms5f7orWmKibSJopdb-a/view?usp=drive_link', '_blank');
+        window.open('https://drive.google.com/file/d/18qjQ3cr2RHN8E2nzLR5B_Vs33c973fKt/view?usp=drive_link', '_blank');
     };
 
     return (
