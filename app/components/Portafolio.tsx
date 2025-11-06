@@ -135,7 +135,7 @@ const Portfolio: React.FC = () => {
                                     {project.technologies.map((tech, techIndex) => (
                                         <li key={techIndex} className="transition-transform duration-300 transform translate-y-2 opacity-0 animate-slideIn">{tech}</li>
                                     ))}
-                                </ul>
+                              </ul>
                             )}
                         </div>
                     </div>

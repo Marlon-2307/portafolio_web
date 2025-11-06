@@ -16,8 +16,8 @@ const About: React.FC = () => {
      // Inicializa AOS en el hook useEffect
   useEffect(() => {
     AOS.init({
-      duration: 1000,  // Duración de la animación
-      once: false,      // Si la animación ocurre solo una vez
+      duration: 1000,  
+      once: false,     
     });
   }, []);
 
