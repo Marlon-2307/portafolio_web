@@ -8,9 +8,10 @@ const About: React.FC = () => {
         { nombre: "React", percentage: 65 },
         { nombre: "JavaScript", percentage: 75 },
         { nombre: "Tailwind CSS", percentage: 75 },
+        { nombre: "Material UI", percentage: 75},
         { nombre: "HTML5", percentage: 75 },
         { nombre: "MySQL", percentage: 50 },
-        { nombre: "Git - GitHub", percentage: 65 }
+        { nombre: "Git - GitHub", percentage: 65 },
     ];
 
      // Inicializa AOS en el hook useEffect
