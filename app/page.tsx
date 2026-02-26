@@ -9,6 +9,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Iconos from "./components/Iconos";
 import FlotanteBoton from "./components/FlotanteBoton";
+import CursorGlow from "./components/CursorGlow";
 
 const Home: React.FC = () => {
   return (

@@ -12,22 +12,22 @@ const Header: React.FC = () => {
     return (
         <>
             {/* Escritorio Menu */}
-            <div className="fixed top-0 left-0 right-0 z-10 flex justify-between items-center py-6 px-16 max-sm:px-6 bg-white shadow-md">
+            <div className="fixed top-0 left-4 right-4 z-10 flex justify-between items-center py-6 px-16 max-sm:px-6 backdrop-blur-md shadow-md rounded-xl top-2 border border-gray-700">
                 <div>
-                    <a className="text-gray-900 hover:text-gray-700 text-4xl" href="#"><h3>Marlon <span className="text-gray-500 text-xl">Colon.</span></h3></a>
+                    <a className="text-white hover:text-gray-700 text-4xl" href="#"><h3>M<span className="text-gray-300 text-xl">C.</span></h3></a>
                 </div>  
-                <nav className="hidden md:flex items-center gap-10">
+                <nav className="hidden md:flex items-center gap-4">
                     <Link href="/">
-                        <div className="text-gray-600 hover:text-gray-800 transition-transform duration-300 transform hover:translate-y-2 hover:scale-105">Inicio</div>
+                        <div className="text-white cursor-pointerpx-3 py-1 rounded-md text-white transition-all duration-300 hover:bg-white/10 hover:bg-gray-700 cursor-pointer p-4 rounded-lg">Inicio</div>
                     </Link>
                     <Link href="#about">
-                        <div className="text-gray-600 hover:text-gray-800 transition-transform duration-300 transform hover:translate-y-2 hover:scale-105">Infomacion</div> 
+                        <div className="text-white cursor-pointerpx-3 py-1 rounded-md text-white transition-all duration-300 hover:bg-white/10 hover:bg-gray-700 cursor-pointer p-4 rounded-lg">Infomacion</div> 
                     </Link>
                     <Link href="#portafolio">
-                        <div className="text-gray-600 hover:text-gray-800 transition-transform duration-300 transform hover:translate-y-2 hover:scale-105">Proyectos</div>
+                        <div className="text-white cursor-pointerpx-3 py-1 rounded-md text-white transition-all duration-300 hover:bg-white/10 hover:bg-gray-700 cursor-pointer p-4 rounded-lg">Proyectos</div>
                     </Link>                
                     <Link href="#contact">
-                        <div className="text-gray-600 hover:text-gray-800 transition-transform duration-300 transform hover:translate-y-2 hover:scale-105">Contacto</div>
+                        <div className="text-white cursor-pointerpx-3 py-1 rounded-md text-white transition-all duration-300 hover:bg-white/10 hover:bg-gray-700 cursor-pointer p-4 rounded-lg">Contacto</div>
                     </Link>
                     {/* <DarkMode /> */}
                 </nav>

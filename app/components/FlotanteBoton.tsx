@@ -8,7 +8,7 @@ const FlotanteBoton: React.FC = () => {
     };
 
     const handleCVDownload = () => {
-        window.open('https://drive.google.com/file/d/1OaI_lB0FEncoE_BdeIVcQxHi9yNojWPc/view?usp=drive_link', '_blank');
+        window.open('https://drive.google.com/file/d/1MzTZeFdWdcvr_fqYfkd-BLpeQ_JsLnck/view?usp=drive_link', '_blank');
     };
 
     return (
@@ -16,16 +16,16 @@ const FlotanteBoton: React.FC = () => {
             {/* Botón de Descargar CV */}
             <button
                 onClick={handleCVDownload}
-                className="flex items-center py-2 px-2 bg-white text-gray-700 rounded-sm shadow-md transition max-sm:buttom-6"
+                className="flex items-center py-2 px-2 bg-transparent text-white rounded-xl shadow-md transition max-sm:buttom-6 border border-gray-700"
             >
-                <span className="text-sm mx-2">Curriculum Vitae</span>
+                <span className="text-sm mx-2">CV</span>
                 <FaFileAlt className='w-6 h-6 hover:text-gray-800' />      
             </button>
 
             {/* Botón de Volver Arriba */}
             <button
                 onClick={scrollTop}
-                className="p-2 bg-white text-gray-700 rounded-sm shadow-lg hover:bg-gray-400 hover:text-white transition"
+                className="p-2 bg-transparent text-white border border-gray-700 rounded-xl shadow-lg hover:bg-gray-400 hover:text-white transition"
             >
                 <FaAngleUp className='w-6 h-6' />
             </button>

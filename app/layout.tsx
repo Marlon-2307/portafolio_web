@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Prompt } from "next/font/google";
+import { Saira } from "next/font/google";
 import "./Styles/globals.css";
 
-const prompt = Prompt({
+const prompt = Saira({
   weight: '400',
   subsets: ['latin'],
 });
