@@ -26,7 +26,7 @@ const Iconos: React.FC = () => {
           <span className="absolute left-14 top-1/2 -translate-y-1/2
                            opacity-0 group-hover:opacity-100
                            transform -translate-x-2 group-hover:translate-x-0
-                           bg-white/80 backdrop-blur-sm text-gray-900 font-semibold text-sm
+                           bg-white/80 backdrop-blur-sm text-gray-800 text-sm
                            px-3 py-1 rounded-md shadow-lg
                            whitespace-nowrap
                            transition-all duration-300

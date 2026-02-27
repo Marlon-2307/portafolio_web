@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: '#0F172A',   // Fondo oscuro
+        primary: '#0b1220',   // Fondo oscuro
         secondary: '#F8FAFC', // Texto principal
         muted: '#94A3B8',     // Texto secundario
         accent: '#0070F3',    // Botones / azul neón

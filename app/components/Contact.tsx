@@ -1,185 +1,264 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
 import { AiOutlineCheckCircle, AiOutlineCloseCircle } from "react-icons/ai";
-import 'aos/dist/aos.css';  // Importa los estilos de AOS
-import AOS from 'aos';      // Importa la librería de animaciones
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Contact: React.FC = () => {
-    const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState({
+    nombre: "",
+    telefono: "",
+    email: "",
+    observacion: "",
+  });
+
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalMessage, setModalMessage] = useState("");
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const response = await fetch("http://localhost:3000/usuarios", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) throw new Error();
+
+      setIsSuccess(true);
+      setModalMessage("Mensaje enviado correctamente 🚀");
+
+      setFormData({
         nombre: "",
         telefono: "",
         email: "",
-        observacion: ""
-    });
-
-    const [modalOpen, setModalOpen] = useState(false); 
-    const [modalMessage, setModalMessage] = useState(''); 
-    const [isCheck, setIsCheck] = useState(false); 
-    const [redirectOnClose, setRedirectOnClose] = useState(false); 
-
-    const router = useRouter();
-
-    const handleSubmit = async (event: React.FormEvent) => {
-        event.preventDefault();
-
-        try {
-            const response = await fetch("http://localhost:3000/usuarios", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(formData)
-            });
-
-            if (!response.ok) {
-                throw new Error("Error al enviar el mensaje");
-            }
-
-            const data = await response.json();
-            console.log("Mensaje enviado:", data);
-            setIsCheck(true);
-            setModalMessage("Información enviada con éxito"); 
-            setModalOpen(true);
-            setRedirectOnClose(true); 
-        } catch (error) {
-            console.error("Error al enviar el mensaje:", error);
-            setIsCheck(false);
-            setModalMessage("Error al enviar información"); 
-            setModalOpen(true);
-        }
-    };
-
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setFormData({
-            ...formData,
-            [event.target.name]: event.target.value
-        });
-    };
-
-    const closeModal = () => {
-        setModalOpen(false);
-        if (redirectOnClose) {
-            router.push('/');
-        }
+        observacion: "",
+      });
+    } catch {
+      setIsSuccess(false);
+      setModalMessage("Ocurrió un error al enviar el mensaje.");
+    } finally {
+      setLoading(false);
+      setModalOpen(true);
     }
+  };
 
-      // Inicializa AOS en el hook useEffect
-    useEffect(() => {
-        AOS.init({
-        duration: 1000,  // Duración de la animación
-        once: false,      // Si la animación ocurre solo una vez
-        });
-    }, []);
-
-
-    return (
-        <>
-            {modalOpen && (
-                <div className="bg-black bg-opacity-70 fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none">
-                    <div className="relative w-auto max-w-3xl mx-auto my-6">
-                        <div className="bg-white rounded-lg shadow-lg outline-none focus:outline-none">
-                            <div className="relative p-6 flex-auto flex flex-col items-center justify-center">
-                                {isCheck ? (
-                                    <AiOutlineCheckCircle className="text-gray-600 text-6xl mb-4" />
-                                ) : (
-                                    <AiOutlineCloseCircle className="text-red-600 text-6xl mb-4" />
-                                )}
-                                <p className="my-4 text-black font-semibold text-center text-lg leading-relaxed">{modalMessage}</p>
-                            </div>
-                            <div className="flex justify-center items-center p-6 rounded-b">
-                                <button
-                                    className="bg-gray-700 text-white w-80 mx-auto font-semibold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1"
-                                    type="button"
-                                    onClick={closeModal}
-                                >
-                                    Volver al Inicio
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  return (
+    <>
+      {/* Modal */}
+      {modalOpen && (
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center z-50">
+          <div className="bg-gray-900 border border-gray-700 rounded-2xl p-10 max-w-md w-full text-center shadow-2xl">
+            {isSuccess ? (
+              <AiOutlineCheckCircle className="text-green-500 text-6xl mx-auto mb-6" />
+            ) : (
+              <AiOutlineCloseCircle className="text-red-500 text-6xl mx-auto mb-6" />
             )}
 
-            <div className="w-[80%] mx-auto py-8" id="contact">    
-            <h3 className="text-5xl mb-12 text-gray-900 font-semibold max-md:text-center">Contacto <span><hr className="text-gray-800 w-[30%]" /></span></h3>
-                <div className="grid grid-cols-[1fr_2fr] gap-12 w-[90%] mx-auto max-md:block max-md:w-[100%]">      
-                    <div data-aos="fade-up-right" className="w-[100%] max-md:w-full max-md:mb-6 text-lg border border-gray-300 px-10 py-8 rounded-md h-72">                         
-                        <p className="mb-6 text-gray-800">
-                            Teléfono: <br />
-                            <span className="text-gray-500">(+57) 300 6052169</span>
-                        </p>
-                        <p className="mb-6 text-gray-800">
-                            Email: <br />
-                            <span className="text-gray-500">marloncolon23@gmail.com</span>
-                        </p>
-                        <p className="text-gray-800">
-                            Vivo en: <br />
-                            <span className="text-gray-500">Barranquilla, Colombia.</span>
-                        </p>
-                    </div>
-                    <div data-aos="fade-up-left" className="w-[100%] mx-auto max-md:w-full border border-gray-300 px-10 py-8 rounded-md">
-                        <form onSubmit={handleSubmit} className="space-y-4 mt-6 max-md:mt-2">
-                            <div>
-                                <label className="block text-gray-800 mb-1" htmlFor="nombre">Tu Nombre:</label>
-                                <input
-                                    type="text"
-                                    id="nombre"
-                                    name="nombre"
-                                    value={formData.nombre}
-                                    onChange={handleChange}
-                                    required
-                                    className="w-full px-4 py-2 border-b-2 border-gray-700 focus:outline-none"
-                                />
-                            </div>
-                            <div>
-                                <label className="block text-gray-800 mb-1" htmlFor="telefono">Tu Teléfono:</label>
-                                <input
-                                    type="text"
-                                    id="telefono"
-                                    name="telefono"
-                                    value={formData.telefono}
-                                    onChange={handleChange}
-                                    required
-                                    className="w-full px-4 py-2 border-b-2 border-gray-700 focus:outline-none"
-                                />
-                            </div>
-                            <div>
-                                <label className="block text-gray-800 mb-1" htmlFor="email">Tu Email:</label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    value={formData.email}
-                                    onChange={handleChange}
-                                    required
-                                    className="w-full px-4 py-2 border-b-2 border-gray-700 focus:outline-none"
-                                />
-                            </div>
-                            <div>
-                                <label className="block text-gray-800 mb-1" htmlFor="observacion">Tu Mensaje:</label>
-                                <textarea
-                                    id="observacion"
-                                    name="observacion"
-                                    value={formData.observacion}
-                                    onChange={handleChange}
-                                    rows={4}
-                                    required
-                                    className="w-full px-4 py-2 border-b-2 border-gray-700 focus:outline-none resize-none"
-                                ></textarea>
-                            </div>
-                            <div className="flex justify-end">
-                                <input
-                                    type="submit"
-                                    value="Enviar"
-                                    className="w-[40%] max-md:w-full border border-gray-500 text-gray-800 hover:text-white py-4 rounded-md cursor-pointer hover:bg-gray-800 transition duration-300"
-                                />
-                            </div>
-                        </form>
-                    </div>
-                </div> 
+            <p className="text-white text-lg mb-8">{modalMessage}</p>
+
+            <button
+              onClick={() => setModalOpen(false)}
+              className="px-6 py-3 bg-indigo-600 rounded-xl text-white hover:bg-indigo-700 transition"
+            >
+              Cerrar
+            </button>
+          </div>
+        </div>
+      )}
+
+      <section id="contact" className="px-6 py-24">
+        <div className="w-[85%] mx-auto">
+          <h2 className="text-white text-5xl font-semibold mb-16">
+            Contacto
+            <span className="block h-[2px] w-24 bg-gray-600 mt-3"></span>
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-16">
+            {/* Info */}
+            <div
+              data-aos="fade-right"
+              className="bg-gray-900 border border-gray-800 rounded-2xl p-10"
+            >
+              <p className="mb-8 text-gray-400">
+                <span className="block text-white mb-1">
+                  Teléfono
+                </span>
+                (+57) 300 6052169
+              </p>
+
+              <p className="mb-8 text-gray-400">
+                <span className="block text-white mb-1">
+                  Email
+                </span>
+                marloncolon23@gmail.com
+              </p>
+
+              <p className="text-gray-400">
+                <span className="block text-white mb-1">
+                  Ubicación
+                </span>
+                Barranquilla, Colombia
+              </p>
             </div>
-        </>
-    );
+
+            {/* Form */}
+            <div
+              data-aos="fade-left"
+              className="bg-gray-900 border border-gray-800 rounded-2xl p-10"
+            >
+              <form onSubmit={handleSubmit} className="space-y-10">
+
+                {/* Nombre */}
+                <div className="relative">
+                  <input
+                    type="text"
+                    name="nombre"
+                    value={formData.nombre}
+                    onChange={handleChange}
+                    required
+                    placeholder=" "
+                    className="peer w-full bg-transparent border-b-2 border-gray-600 text-white py-3 focus:outline-none focus:border-indigo-500 transition"
+                  />
+                  <label
+                    className="
+                      absolute left-0
+                      -top-4 text-xs
+                      text-indigo-500
+                      transition-all duration-300 ease-out
+                      peer-placeholder-shown:top-3
+                      peer-placeholder-shown:text-base
+                      peer-placeholder-shown:text-gray-400
+                      peer-focus:-top-4
+                      peer-focus:text-xs
+                      peer-focus:text-indigo-500
+                    "
+                  >
+                    Nombre
+                  </label>
+                </div>
+
+                {/* Teléfono */}
+                <div className="relative">
+                  <input
+                    type="text"
+                    name="telefono"
+                    value={formData.telefono}
+                    onChange={handleChange}
+                    required
+                    placeholder=" "
+                    className="peer w-full bg-transparent border-b-2 border-gray-600 text-white py-3 focus:outline-none focus:border-indigo-500 transition"
+                  />
+                  <label
+                    className="
+                      absolute left-0
+                      -top-4 text-xs
+                      text-indigo-500
+                      transition-all duration-300 ease-out
+                      peer-placeholder-shown:top-3
+                      peer-placeholder-shown:text-base
+                      peer-placeholder-shown:text-gray-400
+                      peer-focus:-top-4
+                      peer-focus:text-xs
+                      peer-focus:text-indigo-500
+                    "
+                  >
+                    Teléfono
+                  </label>
+                </div>
+
+                {/* Email */}
+                <div className="relative">
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    placeholder=" "
+                    className="peer w-full bg-transparent border-b-2 border-gray-600 text-white py-3 focus:outline-none focus:border-indigo-500 transition"
+                  />
+                  <label
+                    className="
+                      absolute left-0
+                      -top-4 text-xs
+                      text-indigo-500
+                      transition-all duration-300 ease-out
+                      peer-placeholder-shown:top-3
+                      peer-placeholder-shown:text-base
+                      peer-placeholder-shown:text-gray-400
+                      peer-focus:-top-4
+                      peer-focus:text-xs
+                      peer-focus:text-indigo-500
+                    "
+                  >
+                    Email
+                  </label>
+                </div>
+
+                {/* Mensaje */}
+                <div className="relative">
+                  <textarea
+                    name="observacion"
+                    value={formData.observacion}
+                    onChange={handleChange}
+                    required
+                    placeholder=" "
+                    rows={4}
+                    className="peer w-full bg-transparent border-b-2 border-gray-600 text-white py-3 focus:outline-none focus:border-indigo-500 transition resize-none"
+                  />
+                  <label
+                    className="
+                      absolute left-0
+                      -top-4 text-xs
+                      text-indigo-500
+                      transition-all duration-300 ease-out
+                      peer-placeholder-shown:top-3
+                      peer-placeholder-shown:text-base
+                      peer-placeholder-shown:text-gray-400
+                      peer-focus:-top-4
+                      peer-focus:text-xs
+                      peer-focus:text-indigo-500
+                    "
+                  >
+                    Mensaje
+                  </label>
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full py-4 border border-gray-800 rounded-xl text-white hover:bg-gray-800 transition disabled:opacity-50"
+                >
+                  {loading ? "Enviando..." : "Enviar"}
+                </button>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
 };
 
 export default Contact;

@@ -15,7 +15,7 @@ const Header: React.FC = () => {
   return (
     <>
       {/* Desktop Menu */}
-      <div className="fixed top-2 left-4 right-4 z-50 flex justify-between items-center py-2 px-16 max-sm:px-6 backdrop-blur-md rounded-xl border border-gray-700">
+      <div className="fixed top-2 left-4 right-4 z-50 flex justify-between items-center py-2 px-16 max-sm:px-6 backdrop-blur-md shadow-md rounded-xl border border-gray-700">
         <a className="text-white text-4xl hover:text-gray-300" href="#">
           <h3>
             M<span className="text-gray-300 text-xl">C.</span>

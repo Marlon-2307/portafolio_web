@@ -1,148 +1,222 @@
-import React, { useState, useEffect } from "react"; // Importa React y useState, useEffect
-import { FaChevronLeft, FaChevronRight, FaChevronDown, FaChevronUp } from "react-icons/fa";
+"use client";
+
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import 'aos/dist/aos.css';  // Importa los estilos de AOS
-import AOS from 'aos';      // Importa la librería de animaciones
+import { FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+interface Project {
+  nombre: string;
+  description: string;
+  technologies: string[];
+  images: string[];
+  liveUrl?: string;
+}
 
 const Portfolio: React.FC = () => {
-    const [isOpen, setIsOpen] = useState<number | null>(null);
-    // Estado para guardar el índice de la imagen actual por proyecto
-    const [currentImageIndexes, setCurrentImageIndexes] = useState<number[]>([]);
+  const [currentIndexes, setCurrentIndexes] = useState<number[]>([]);
+  const [fade, setFade] = useState(true);
+  const [lightbox, setLightbox] = useState<{
+    open: boolean;
+    projectIndex: number;
+    imageIndex: number;
+  }>({ open: false, projectIndex: 0, imageIndex: 0 });
 
-    const projects = [
-        { 
-            src: "/proyecto7.png", 
-            alt: "CM Electronics - Captura de pantalla", 
-            nombre: "CM Electronics",
-            description: "Tienda en línea especializada en productos electrónicos de alta calidad. Ofrecemos una amplia selección de dispositivos, desde equipos de audio hasta accesorios, brindando a los usuarios una experiencia de compra segura, rápida y eficiente.",
-            technologies: ["Next.js", "React", "Tailwind CSS", "HTML", "TypeScript", "Node.js"],
-            images: ["/proyecto7.png", "/sesion-categorias.png", "/sesion-footer.png", "/sesion-login.png", "/sesion-productoid.png", "/sesion-carrito.png"],
-        },
-        { 
-            src: "/proyecto2.png", 
-            alt: "Clínica Dental - Captura de pantalla", 
-            nombre: "Clínica Dental",
-            description: "Sitio web informativo y fácil de usar para una clínica dental, que ofrece a los pacientes la posibilidad de agendar citas, conocer los servicios dentales ofrecidos y consejos sobre salud bucal. Todo con un enfoque el bienestar del paciente.",
-            technologies: ["HTML", "CSS", "SASS", "Node.js"],
-            images: ["/proyecto2.png", "/banner.png", "/form.png", "/blog.png"],
-        },
-        { 
-            src: "/proyecto6.png", 
-            alt: "GYM-POWER - Captura de pantalla", 
-            nombre: "GYM-POWER",
-            description: "Aplicación diseñada para entusiastas del fitness y gimnasios. GYM-POWER permite a los usuarios crear rutinas de entrenamiento personalizadas, seguir su progreso, y acceder a recursos y consejos de expertos para maximizar su rendimiento.",
-            technologies: ["HTML", "CSS", "JavaScript"],
-            images: ["/proyecto6.png", "/sesion-trainer.png", "/sesion-planes.png", "/sesion-footerGYM.png", "/sesion-formulario.png"],
+  const projects: Project[] = [
+    {
+      nombre: "CM Electronics",
+      description:
+        "Tienda online optimizada con SSR, rendimiento y arquitectura escalable.",
+      technologies: ["Next.js", "React", "Tailwind", "TypeScript"],
+      images: [
+        "/proyecto7.png",
+        "/sesion-categorias.png",
+        "/sesion-footer.png",
+      ],
+      liveUrl: "https://tuproyecto.com",
+    },
+    {
+      nombre: "Clínica Dental",
+      description:
+        "Web optimizada para SEO técnico y experiencia de usuario.",
+      technologies: ["HTML", "CSS", "SASS"],
+      images: ["/proyecto2.png", "/banner.png", "/form.png"],
+      liveUrl: "https://tuproyecto2.com",
+    },
+  ];
+
+  useEffect(() => {
+    setCurrentIndexes(new Array(projects.length).fill(0));
+    AOS.init({ duration: 1000, once: true });
+  }, []);
+
+  const changeImage = (projectIndex: number, direction: "next" | "prev") => {
+    setFade(false);
+
+    setTimeout(() => {
+      setCurrentIndexes((prev) => {
+        const updated = [...prev];
+        const total = projects[projectIndex].images.length;
+
+        if (direction === "next") {
+          updated[projectIndex] = (updated[projectIndex] + 1) % total;
+        } else {
+          updated[projectIndex] =
+            (updated[projectIndex] - 1 + total) % total;
         }
-    ];
 
-    // Inicializar el índice de la imagen para cada proyecto
-    const initializeImageIndexes = () => {
-        setCurrentImageIndexes(new Array(projects.length).fill(0));
-    };
+        return updated;
+      });
 
-    // Función para mostrar la imagen anterior
-    const showPrevImage = (projectIndex: number) => {
-        setCurrentImageIndexes((prevIndexes) => {
-            const newIndexes = [...prevIndexes];
-            newIndexes[projectIndex] = (newIndexes[projectIndex] - 1 + projects[projectIndex].images.length) % projects[projectIndex].images.length;
-            return newIndexes;
-        });
-    };
+      setFade(true);
+    }, 200);
+  };
 
-    // Función para mostrar la imagen siguiente
-    const showNextImage = (projectIndex: number) => {
-        setCurrentImageIndexes((prevIndexes) => {
-            const newIndexes = [...prevIndexes];
-            newIndexes[projectIndex] = (newIndexes[projectIndex] + 1) % projects[projectIndex].images.length;
-            return newIndexes;
-        });
-    };
+  const openLightbox = (projectIndex: number) => {
+    setLightbox({
+      open: true,
+      projectIndex,
+      imageIndex: currentIndexes[projectIndex],
+    });
+  };
 
-    // Inicializar los índices de las imágenes al montar el componente
-    useEffect(() => {
-        initializeImageIndexes();
-    }, []);
+  return (
+    <section id="portafolio" className="px-6 py-18">
+      <div className="w-[85%] mx-auto">
+        <h2 className="text-white text-5xl font-semibold mb-12">
+          Proyectos
+          <span className="block h-[2px] w-24 bg-gray-600 mt-3"></span>
+        </h2>
+      </div>
 
-      // Inicializa AOS en el hook useEffect
-    useEffect(() => {
-        AOS.init({
-        duration: 1000,  // Duración de la animación
-        once: true,      // Si la animación ocurre solo una vez
-        });
-    }, []);
+      <div className="w-[85%] mx-auto space-y-24">
+        {projects.map((project, index) => (
+          <div
+            key={project.nombre}
+            className="grid md:grid-cols-2 gap-16 items-center"
+          >
+            {/* MacBook Effect */}
+            <div data-aos="fade-right">
+              <div className="bg-black/20 p-6 rounded-xl border border-gray-700">
+                <div
+                  onClick={() => openLightbox(index)}
+                  className="cursor-pointer relative rounded-xl overflow-hidden transition-all duration-700 hover:scale-[1.02]"
+                >
+                  <Image
+                    src={project.images[currentIndexes[index]]}
+                    alt={project.nombre}
+                    width={1000}
+                    height={700}
+                    className={`rounded-xl transition-opacity duration-500 ${
+                      fade ? "opacity-100" : "opacity-0"
+                    }`}
+                  />
+                </div>
 
-    return (
-        <div className="pt-12 bg-fixed bg-cover bg-center" id="portafolio">
-            <h2 className="text-gray-800 mb-12 text-5xl font-bold w-[80%] mx-auto max-md:text-center">
-                Proyectos
-                <span>
-                    <hr className="text-gray-900 w-[30%] mt-2" />
-                </span>
-            </h2>
-            <div>
-                {projects.map((project, index) => (
-                    <div 
-                        key={index}
-                        className="group relative overflow-hidden rounded-md cursor-pointer max-md:mb-4 grid grid-cols-2 max-lg:grid-cols-2 max-md:block gap-10 w-[75%] mx-auto max-lg:w-[80%] mb-10"
-                    >
-                        {/* Contenedor de la Imagen */}
-                        <div className="relative h-60 w-full max-md:h-44 overflow-hidden rounded-t-md bg-white">
-                            <Image 
-                                src={project.images[currentImageIndexes[index]]} 
-                                alt={project.alt} 
-                                layout="responsive" 
-                                width={700} 
-                                height={500} 
-                                objectFit="cover" 
-                                loading="lazy" 
-                                data-aos="flip-down"
-                                className="absolute inset-0 transition-transform duration-700 ease-in-out transform group-hover:scale-110 border rounded-md"
-                            />
-                            {/* Botones para navegar entre imágenes */}
-                            <div className="absolute inset-2 flex items-center justify-between p-2">
-                                <button 
-                                    className="bg-gray-700 bg-opacity-50 text-white px-2 py-4 rounded-sm hover:bg-gray-600 hover:bg-opacity-70 transition-transform duration-300 transform hover:scale-110"
-                                    onClick={() => showPrevImage(index)}
-                                >
-                                    <FaChevronLeft className="text-4xl max-md:text-2xl" />
-                                </button>
-                                <button 
-                                    className="bg-gray-700 bg-opacity-50 text-white px-2 py-4 rounded-sm hover:bg-gray-600 hover:bg-opacity-70 transition-transform duration-300 transform hover:scale-110"
-                                    onClick={() => showNextImage(index)}
-                                >
-                                    <FaChevronRight className="text-4xl max-md:text-2xl" />
-                                </button>
-                            </div>
-                        </div>
-                        
-                        {/* Contenedor de la Documentación */}
-                        <div className="p-6 bg-white relative transition-transform duration-300 rounded-md">
-                            <p className="text-gray-800 text-3xl mb-4">{project.nombre}</p>
-                            <p className="text-gray-500 text-md mb-8">{project.description}</p>
-                            <div className="flex items-center justify-between cursor-pointer">
-                                <p className="text-gray-500 text-sm mb-2">Tecnologías utilizadas</p>
-                                <div className="flex items-center">
-                                    {isOpen === index ? (
-                                        <FaChevronUp className="text-gray-300 hover:text-gray-500 text-md transition-transform duration-300" onClick={() => setIsOpen(null)} />
-                                    ) : (
-                                        <FaChevronDown className="text-gray-300 hover:text-gray-500 text-md transition-transform duration-300" onClick={() => setIsOpen(index)} />
-                                    )}
-                                </div>
-                            </div>
-                            {isOpen === index && (
-                                <ul className="list-inside text-gray-500 text-sm mt-2 transition-transform duration-500 transform translate-y-0 opacity-100">
-                                    {project.technologies.map((tech, techIndex) => (
-                                        <li key={techIndex} className="transition-transform duration-300 transform translate-y-2 opacity-0 animate-slideIn">{tech}</li>
-                                    ))}
-                              </ul>
-                            )}
-                        </div>
-                    </div>
-                ))}
+                {/* Indicadores */}
+                <div className="flex justify-center gap-3 mt-6">
+                  {project.images.map((_, imgIndex) => (
+                    <button
+                      key={imgIndex}
+                      onClick={() =>
+                        setCurrentIndexes((prev) => {
+                          const updated = [...prev];
+                          updated[index] = imgIndex;
+                          return updated;
+                        })
+                      }
+                      className={`w-3 h-3 rounded-full transition ${
+                        currentIndexes[index] === imgIndex
+                          ? "bg-indigo-500 scale-125"
+                          : "bg-gray-500"
+                      }`}
+                    />
+                  ))}
+                </div>
+
+                {/* Flechas */}
+                <div className="flex justify-between mt-6">
+                  <button
+                    onClick={() => changeImage(index, "prev")}
+                    className="text-gray-400 hover:text-white transition"
+                  >
+                    <FaChevronLeft size={20} />
+                  </button>
+
+                  <button
+                    onClick={() => changeImage(index, "next")}
+                    className="text-gray-400 hover:text-white transition"
+                  >
+                    <FaChevronRight size={20} />
+                  </button>
+                </div>
+              </div>
             </div>
+
+            {/* Info */}
+            <div data-aos="fade-left">
+              <h3 className="text-3xl text-white mb-4">
+                {project.nombre}
+              </h3>
+
+              <p className="text-gray-400 mb-6 leading-relaxed">
+                {project.description}
+              </p>
+
+              <div className="flex flex-wrap gap-3 mb-6">
+                {project.technologies.map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-3 py-1.5 bg-gray-800 text-gray-300 rounded-xl text-sm hover:bg-white hover:text-gray-800 transition"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-4 py-2 border border-gray-800 text-white rounded-xl hover:bg-gray-800 transition duration-300"
+                >
+                  Ver proyecto →
+                </a>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Lightbox */}
+      {lightbox.open && (
+        <div className="fixed inset-0 bg-black/90 backdrop-blur-md flex items-center justify-center z-50">
+          <button
+            onClick={() => setLightbox({ ...lightbox, open: false })}
+            className="absolute top-6 right-6 text-white"
+          >
+            <FaTimes size={28} />
+          </button>
+
+          <div className="max-w-5xl w-full px-6">
+            <Image
+              src={
+                projects[lightbox.projectIndex].images[
+                  lightbox.imageIndex
+                ]
+              }
+              alt="preview"
+              width={1400}
+              height={900}
+              className="rounded-2xl shadow-2xl"
+            />
+          </div>
         </div>
-    );
+      )}
+    </section>
+  );
 };
 
 export default Portfolio;

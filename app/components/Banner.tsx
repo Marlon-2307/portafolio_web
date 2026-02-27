@@ -11,7 +11,7 @@ const Banner: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative h-screen bg-[#0F172A] overflow-hidden">
+    <div className="relative h-screen bg-[#0b1220] overflow-hidden">
 
       {/* Olas de energía sobrias */}
       <div className="absolute inset-0">
