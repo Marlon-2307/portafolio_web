@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Link from "next/link";
 
 const About: React.FC = () => {
   const skills = {
@@ -72,6 +73,12 @@ const About: React.FC = () => {
           <p className="text-gray-400 leading-relaxed">
             Desarrollador Frontend con experiencia en React y Next.js, y en la construcción de aplicaciones web escalables orientadas al rendimiento. Enfocado en optimización (SSR, Core Web Vitals), SEO técnico y arquitectura basada en componentes reutilizables. Experiencia integrando APIs REST y colaborando en equipos bajo metodologías ágiles como Scrum.
           </p>
+
+          <Link href="/cv.pdf">
+            <div className="py-4 text-white hover:scale-95 transition-all duration-300 cursor-pointer">
+              Curriculum Vitae →
+            </div>
+          </Link>
         </div>
 
         {/* Tecnologías */}
