@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Saira } from "next/font/google";
+import { Play } from "next/font/google";
 import "./Styles/globals.css";
 
-const prompt = Saira({
+const prompt = Play ({
   weight: '400',
   subsets: ['latin'],
 });

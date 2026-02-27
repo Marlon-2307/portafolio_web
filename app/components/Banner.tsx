@@ -35,7 +35,7 @@ const Banner: React.FC = () => {
         {/* Botones */}
         <div data-aos="fade-up" data-aos-delay="600" className="mt-10 flex flex-wrap gap-6 justify-center">
           <Link href="#portafolio">
-            <div className="px-8 py-3 rounded-xl bg-gray-800 text-gray-100 font-medium shadow-lg hover:scale-105 hover:shadow-gray-700/40 transition-all duration-300 cursor-pointer">
+            <div className="px-8 py-3 rounded-xl bg-gray-800 text-gray-100 font-medium shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer border border-gray-700">
               Ver Proyectos
             </div>
           </Link>

@@ -1,16 +1,18 @@
 import React from "react";
 import { FaEnvelope, FaLinkedin, FaTwitter, FaGithub, FaWhatsapp } from "react-icons/fa";
+import { FaAngleUp, FaFileAlt } from 'react-icons/fa';
 
 const Iconos: React.FC = () => {
   const icons = [
-    { icon: <FaEnvelope className="w-8 h-8" />, href: "mailto:marloncolon23@gmail.com", label: "Email" },
-    { icon: <FaWhatsapp className="w-8 h-8" />, href: "https://wa.me/+573006052169", label: "WhatsApp" },
-    { icon: <FaLinkedin className="w-8 h-8" />, href: "https://www.linkedin.com/in/marlon-colon-504aa0271/", label: "LinkedIn" },
-    { icon: <FaGithub className="w-8 h-8" />, href: "https://github.com/Marlon-2307", label: "GitHub" },
+    { icon: <FaEnvelope className="w-6 h-6" />, href: "mailto:marloncolon23@gmail.com", label: "Email" },
+    { icon: <FaWhatsapp className="w-6 h-6" />, href: "https://wa.me/+573006052169", label: "WhatsApp" },
+    { icon: <FaLinkedin className="w-6 h-6" />, href: "https://www.linkedin.com/in/marlon-colon-504aa0271/", label: "LinkedIn" },
+    { icon: <FaGithub className="w-6 h-6" />, href: "https://github.com/Marlon-2307", label: "GitHub" },
+    { icon: <FaFileAlt className="w-6 h-6" />, href: "https://drive.google.com/file/d/1MzTZeFdWdcvr_fqYfkd-BLpeQ_JsLnck/view?usp=drive_link", label: "Curriculum Vitae" },
   ];
 
   return (
-    <div className="fixed top-3/4 left-4 transform -translate-y-1/2 flex flex-col items-center p-2 bg-transparent z-10 shadow-md rounded-xl">
+    <div className="fixed top-3/4 left-4 transform -translate-y-1/2 flex flex-col items-center p-2 bg-transparent z-10">
       {icons.map(({ icon, href, label }, index) => (
         <a
           key={index}
