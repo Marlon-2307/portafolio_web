@@ -97,7 +97,7 @@ const Contact: React.FC = () => {
             {/* Info */}
             <div
               data-aos="fade-right"
-              className="bg-gray-900 border border-gray-800 rounded-2xl p-10"
+              className="bg-black/20 border border-gray-800 rounded-2xl p-10"
             >
               <p className="mb-8 text-gray-400">
                 <span className="block text-white mb-1">
@@ -124,7 +124,7 @@ const Contact: React.FC = () => {
             {/* Form */}
             <div
               data-aos="fade-left"
-              className="bg-gray-900 border border-gray-800 rounded-2xl p-10"
+              className="bg-black/20 border border-gray-800 rounded-2xl p-10"
             >
               <form onSubmit={handleSubmit} className="space-y-10">
 
