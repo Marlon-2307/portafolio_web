@@ -76,7 +76,7 @@ const About: React.FC = () => {
 
           <Link href="/cv.pdf">
             <div className="py-4 text-white hover:scale-95 transition-all duration-300 cursor-pointer">
-              Curriculum Vitae →
+              Ver Mas →
             </div>
           </Link>
         </div>
