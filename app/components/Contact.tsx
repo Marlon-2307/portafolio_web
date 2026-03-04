@@ -247,7 +247,7 @@ const Contact: React.FC = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-4 border border-gray-800 rounded-xl text-white hover:bg-gray-800 transition disabled:opacity-50"
+                  className="w-full py-4 bg-gray-800 border border-gray-800 rounded-xl text-white hover:bg-gray-900 transition disabled:opacity-50"
                 >
                   {loading ? "Enviando..." : "Enviar"}
                 </button>

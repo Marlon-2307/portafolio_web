@@ -23,7 +23,7 @@ const Portfolio: React.FC = () => {
     {
       nombre: "CM Electronics",
       description:
-        "Tienda online optimizada con SSR, rendimiento y arquitectura escalable.",
+        "E-commerce desarrollado con SSR para mejorar rendimiento, SEO y escalabilidad",
       technologies: ["Next.js", "React", "Tailwind", "TypeScript"],
       images: ["/proyecto7.png"],
       liveUrl: "https://tuproyecto.com",
@@ -31,10 +31,18 @@ const Portfolio: React.FC = () => {
     {
       nombre: "T-Solutions",
       description:
-        "Web optimizada para SEO técnico y experiencia de usuario.",
+        "Sitio corporativo optimizado para SEO técnico, estructura semántica y experiencia de usuario.",
       technologies: ["HTML", "CSS", "JavaScript"],
       images: ["/Img-1.png"],
       liveUrl: "https://marlon-2307.github.io/Tech/",
+    },
+    {
+      nombre: "GYM-POWER",
+      description:
+        "Página web para gimnasio optimizada para dispositivos móviles.",
+      technologies: ["HTML", "CSS", "JavaScript"],
+      images: ["/proyecto6.png"],
+      liveUrl: "https://marlon-2307.github.io/GYM-POWER/",
     },
     /* {
       nombre: "T-Solutions",
@@ -164,7 +172,7 @@ const Portfolio: React.FC = () => {
               rel="noopener noreferrer"
               className="inline-block px-4 py-2 border border-gray-800 text-white rounded-xl hover:bg-gray-800 transition duration-300"
             >
-              Ver proyecto →
+              Ver demo →
             </a>
           )}
         </div>
