@@ -76,7 +76,7 @@ const About: React.FC = () => {
           </p>
 
           <Link href="/cv.pdf">
-            <div className="flex gap-3 2py-4 text-white hover:scale-95 transition-all duration-300 cursor-pointer">
+            <div className="flex gap-3 py-4 text-white hover:scale-95 transition-all duration-300 cursor-pointer">
               Ver Mas <ExternalLink size={18} />
             </div>
           </Link>

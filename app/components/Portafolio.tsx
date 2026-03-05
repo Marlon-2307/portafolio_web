@@ -176,7 +176,7 @@ const Portfolio: React.FC = () => {
                 href={currentProject.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2 border border-gray-700 text-white rounded-xl hover:bg-gray-800 transition"
+                className="inline-flex items-center gap-2 px-5 py-1.5 border border-gray-700 text-white rounded-xl hover:bg-gray-800 transition"
               >
                 Ver demo
                 <ExternalLink size={18} />
@@ -188,7 +188,7 @@ const Portfolio: React.FC = () => {
                 href={currentProject.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2 border border-gray-700 text-white rounded-xl hover:bg-gray-800 transition"
+                className="inline-flex items-center gap-2 px-5 py-1.5 border border-gray-700 text-white rounded-xl hover:bg-gray-800 transition"
               >
                 Ver código
                 <ExternalLink size={18} />
