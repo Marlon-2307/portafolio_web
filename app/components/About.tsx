@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Link from "next/link";
+import { Github, ExternalLink } from "lucide-react";
 
 const About: React.FC = () => {
   const skills = {
@@ -75,8 +76,8 @@ const About: React.FC = () => {
           </p>
 
           <Link href="/cv.pdf">
-            <div className="py-4 text-white hover:scale-95 transition-all duration-300 cursor-pointer">
-              Ver Mas →
+            <div className="flex gap-3 2py-4 text-white hover:scale-95 transition-all duration-300 cursor-pointer">
+              Ver Mas <ExternalLink size={18} />
             </div>
           </Link>
         </div>

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Github, ExternalLink } from "lucide-react";
 
 interface Project {
   nombre: string;
@@ -12,6 +13,7 @@ interface Project {
   technologies: string[];
   images: string[];
   liveUrl?: string;
+  githubUrl?: string
 }
 
 const Portfolio: React.FC = () => {
@@ -27,6 +29,7 @@ const Portfolio: React.FC = () => {
       technologies: ["Next.js", "React", "Tailwind", "TypeScript"],
       images: ["/proyecto7.png"],
       liveUrl: "https://tuproyecto.com",
+      githubUrl: "https://github.com/usuario/proyecto"
     },
     {
       nombre: "T-Solutions",
@@ -35,6 +38,7 @@ const Portfolio: React.FC = () => {
       technologies: ["HTML", "CSS", "JavaScript"],
       images: ["/Img-1.png"],
       liveUrl: "https://marlon-2307.github.io/Tech/",
+      githubUrl: "https://github.com/Marlon-2307/Tech"
     },
     {
       nombre: "GYM-POWER",
@@ -43,6 +47,7 @@ const Portfolio: React.FC = () => {
       technologies: ["HTML", "CSS", "JavaScript"],
       images: ["/proyecto6.png"],
       liveUrl: "https://marlon-2307.github.io/GYM-POWER/",
+      githubUrl: "https://github.com/usuario/proyecto"
     },
     /* {
       nombre: "T-Solutions",
@@ -165,16 +170,31 @@ const Portfolio: React.FC = () => {
             ))}
           </div>
 
-          {currentProject.liveUrl && (
-            <a
-              href={currentProject.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-4 py-2 border border-gray-800 text-white rounded-xl hover:bg-gray-800 transition duration-300"
-            >
-              Ver demo →
-            </a>
-          )}
+          <div className="flex gap-3">
+            {currentProject.liveUrl && (
+              <a
+                href={currentProject.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2 border border-gray-700 text-white rounded-xl hover:bg-gray-800 transition"
+              >
+                Ver demo
+                <ExternalLink size={18} />
+              </a>
+            )}
+
+            {currentProject.githubUrl && (
+              <a
+                href={currentProject.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2 border border-gray-700 text-white rounded-xl hover:bg-gray-800 transition"
+              >
+                Ver código
+                <ExternalLink size={18} />
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </section>
