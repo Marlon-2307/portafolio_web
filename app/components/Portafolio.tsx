@@ -27,7 +27,7 @@ const Portfolio: React.FC = () => {
       description:
         "E-commerce desarrollado con SSR para mejorar rendimiento, SEO y escalabilidad",
       technologies: ["Next.js", "React", "Tailwind", "TypeScript"],
-      images: ["/proyecto7.png"],
+      images: ["/proyecto1.png"],
       liveUrl: "https://tuproyecto.com",
       githubUrl: "https://github.com/usuario/proyecto"
     },
@@ -36,7 +36,7 @@ const Portfolio: React.FC = () => {
       description:
         "Sitio corporativo optimizado para SEO técnico, estructura semántica y experiencia de usuario.",
       technologies: ["HTML", "CSS", "JavaScript"],
-      images: ["/Img-1.png"],
+      images: ["/proyecto2.png"],
       liveUrl: "https://marlon-2307.github.io/Tech/",
       githubUrl: "https://github.com/Marlon-2307/Tech"
     },
@@ -45,7 +45,7 @@ const Portfolio: React.FC = () => {
       description:
         "Página web para gimnasio optimizada para dispositivos móviles.",
       technologies: ["HTML", "CSS", "JavaScript"],
-      images: ["/proyecto6.png"],
+      images: ["/proyecto3.png"],
       liveUrl: "https://marlon-2307.github.io/GYM-POWER/",
       githubUrl: "https://github.com/usuario/proyecto"
     },

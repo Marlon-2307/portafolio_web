@@ -67,15 +67,18 @@ const Header: React.FC = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed top-20 left-0 w-full h-64 bg-white z-40 transform ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-500 ease-in-out`}
-      >
+          className={`fixed top-20 left-0 h-screen w-96 
+          border-r border-t border-b border-gray-700 
+          rounded-r-xl 
+          z-50 backdrop-blur-md transform ${
+            isOpen ? "translate-x-0" : "-translate-x-full"
+          } transition-transform duration-300 ease-in-out shadow-lg`}
+        >
         <div className="flex flex-col pl-12 pt-14 h-full">
           <Link
             href="/"
             onClick={closeMenu}
-            className="text-gray-600 hover:text-gray-800 mb-4 text-xl transition-transform duration-300 hover:translate-x-2 hover:scale-105"
+            className="text-gray-300 hover:text-gray-100 mb-4 text-xl transition-transform duration-300 hover:translate-x-2 hover:scale-105"
           >
             Inicio
           </Link>
@@ -83,7 +86,7 @@ const Header: React.FC = () => {
           <Link
             href="#about"
             onClick={closeMenu}
-            className="text-gray-600 hover:text-gray-800 mb-4 text-xl transition-transform duration-300 hover:translate-x-2 hover:scale-105"
+            className="text-gray-300 hover:text-gray-100 mb-4 text-xl transition-transform duration-300 hover:translate-x-2 hover:scale-105"
           >
             Información
           </Link>
@@ -91,7 +94,7 @@ const Header: React.FC = () => {
           <Link
             href="#portafolio"
             onClick={closeMenu}
-            className="text-gray-600 hover:text-gray-800 mb-4 text-xl transition-transform duration-300 hover:translate-x-2 hover:scale-105"
+            className="text-gray-300 hover:text-gray-100 mb-4 text-xl transition-transform duration-300 hover:translate-x-2 hover:scale-105"
           >
             Portafolio
           </Link>
@@ -99,7 +102,7 @@ const Header: React.FC = () => {
           <Link
             href="#contact"
             onClick={closeMenu}
-            className="text-gray-600 hover:text-gray-800 mb-4 text-xl transition-transform duration-300 hover:translate-x-2 hover:scale-105"
+            className="text-gray-300 hover:text-gray-100 mb-4 text-xl transition-transform duration-300 hover:translate-x-2 hover:scale-105"
           >
             Contacto
           </Link>
