@@ -94,7 +94,7 @@ const Portfolio: React.FC = () => {
 
   return (
     <section id="portafolio" className="px-6 py-18">
-      <div className="w-[85%] mx-auto">
+      <div className="w-full max-w-5xl mx-auto px-4">
         <h2 className="text-white text-5xl font-semibold mb-12">
           Proyectos
           <span className="block h-[2px] w-24 bg-gray-600 mt-3"></span>

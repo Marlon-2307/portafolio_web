@@ -87,7 +87,7 @@ const Contact: React.FC = () => {
       )}
 
       <section id="contact" className="px-6 py-24">
-        <div className="w-[85%] mx-auto">
+        <div className="w-full max-w-5xl mx-auto px-4">
           <h2 className="text-white text-5xl font-semibold mb-16">
             Contacto
             <span className="block h-[2px] w-24 bg-gray-600 mt-3"></span>

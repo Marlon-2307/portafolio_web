@@ -12,7 +12,7 @@ const FlotanteBoton: React.FC = () => {
     }; */
 
     return (
-        <div className="fixed bottom-2 right-4 flex flex-col gap-2 items-end">
+        <div className="fixed bottom-2 right-4 flex flex-col gap-2 items-end z-50">
             {/* Botón de Descargar CV */}
             
             {/* Botón de Volver Arriba */}

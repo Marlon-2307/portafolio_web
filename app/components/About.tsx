@@ -41,7 +41,7 @@ const About: React.FC = () => {
   return (
     <section id="about" className="px-4 py-20">
       {/* Título */}
-      <div className="w-[85%] mx-auto">
+      <div className="w-full max-w-5xl mx-auto px-4">
         <h2
           data-aos="fade-up"
           className="text-white text-5xl font-semibold mb-6 max-md:text-center inline-block"
