@@ -41,13 +41,13 @@ const About: React.FC = () => {
   return (
     <section id="about" className="px-4 py-20">
       {/* Título */}
-      <div className="w-full max-w-5xl mx-auto px-4">
+      <div className="w-full max-w-5xl mx-auto px-4 max-md:text-center">
         <h2
           data-aos="fade-up"
           className="text-white text-5xl font-semibold mb-6 max-md:text-center inline-block"
         >
           Acerca de
-          <span className="block h-[2px] w-24 bg-gray-600 mt-3 max-md:mx-auto"></span>
+          <span className="block h-[2px] w-24 bg-gray-600 mt-3 max-md:mx-auto max-sm:text-center"></span>
         </h2>
 
         <p

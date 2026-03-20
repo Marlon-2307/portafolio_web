@@ -94,10 +94,10 @@ const Portfolio: React.FC = () => {
 
   return (
     <section id="portafolio" className="px-6 py-18">
-      <div className="w-full max-w-5xl mx-auto px-4">
+      <div className="w-full max-w-5xl mx-auto px-4 max-md:text-center">
         <h2 className="text-white text-5xl font-semibold mb-12">
           Proyectos
-          <span className="block h-[2px] w-24 bg-gray-600 mt-3"></span>
+          <span className="block h-[2px] w-24 bg-gray-600 mt-3 max-md:mx-auto max-sm:text-center"></span>
         </h2>
       </div>
 

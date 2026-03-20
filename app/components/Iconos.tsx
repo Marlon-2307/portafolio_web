@@ -12,7 +12,7 @@ const Iconos: React.FC = () => {
   ];
 
   return (
-    <div className="fixed top-3/4 left-4 transform -translate-y-1/2 flex flex-col items-center p-2 bg-transparent z-10">
+    <div className="hidden md:flex fixed top-3/4 left-4 transform -translate-y-1/2 flex-col items-center p-2 bg-transparent z-10">
       {icons.map(({ icon, href, label }, index) => (
         <a
           key={index}

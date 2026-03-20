@@ -86,12 +86,13 @@ const Contact: React.FC = () => {
         </div>
       )}
 
-      <section id="contact" className="px-6 py-24">
-        <div className="w-full max-w-5xl mx-auto px-4">
+      <section id="contact" className="px-4 py-20">
+        <div className="w-full max-w-5xl mx-auto px-4 md:w-[85%] max-md:text-center">
           <h2 className="text-white text-5xl font-semibold mb-16">
             Contacto
-            <span className="block h-[2px] w-24 bg-gray-600 mt-3"></span>
+            <span className="block h-[2px] w-24 bg-gray-600 mt-3 max-md:mx-auto max-sm:text-center"></span>
           </h2>
+        </div>
 
           <div className="grid md:grid-cols-2 gap-16">
             {/* Info */}
@@ -255,7 +256,6 @@ const Contact: React.FC = () => {
               </form>
             </div>
           </div>
-        </div>
       </section>
     </>
   );
